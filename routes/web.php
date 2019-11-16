@@ -16,14 +16,14 @@ Route::get('/', function () {
 });
 Route::get('/WebMaster', function () {
     return view('WebMaster');
-});
+})->name('webmaster');
 
 Route::get('/Admin', function () {
     return view('Admin');
 });
 
 Route::get('Admin', 'AdministratifController@getForm');
-Route::post('/Admin', ['uses' => 'AdministratifController@postForm', 'as' => 'storeAdministratif']);
+Route::post('/Admin','AdministratifController@postForm');
 
 Route::get('etudiant', 'EtudiantController@getForm');
 Route::post('etudiant', ['uses' => 'EtudiantController@postForm', 'as' => 'storeEtudiant']);

@@ -1,5 +1,5 @@
 <template>
-  <mdb-navbar expand="large" dark color="elegant">
+  <mdb-navbar expand="large" dark color="elegant" position="top">
     <mdb-navbar-brand href="#">
       <img src="../../assets/FULL.png" height="50" alt="Logo">
     </mdb-navbar-brand>

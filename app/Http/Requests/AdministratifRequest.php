@@ -24,12 +24,12 @@ class AdministratifRequest extends Request
     public function rules()
     {
         return [
-            'nom' => 'required|unique:administratifs',
-            'dateNaissance' => 'required',
-            'adresse' => 'required',
+            'name' => 'required|string|max:20',
+            'birthday' => 'required',
+            'adress' => 'required',
             'email' => 'required|email|unique:administratifs',
             'login' => 'required|unique:administratifs',
-            'motPasse' => 'required',
+            'password' => 'required',
         ];
     }
 }

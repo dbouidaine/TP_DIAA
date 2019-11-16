@@ -11,7 +11,7 @@
                             <title>Sign In</title>
                             <br><br>
                             <div class="justify-content-center">
-                                <login-compo />
+                            <login-compo url_webmaster="{{url('/WebMaster')}}" url_admin="{{url('/Admin')}}" />
                             </div>
                         </div>
                 </div>

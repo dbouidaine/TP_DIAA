@@ -2065,10 +2065,16 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'FormsPage',
+  props: ['url', 'csrf_token', 'errors'],
   components: {
     mdbRow: mdbvue__WEBPACK_IMPORTED_MODULE_1__["mdbRow"],
     mdbCol: mdbvue__WEBPACK_IMPORTED_MODULE_1__["mdbCol"],
@@ -2083,28 +2089,59 @@ __webpack_require__.r(__webpack_exports__);
   },
   data: function data() {
     return {
-      guests: 4,
-      feilds: {
-        name: '',
-        adress: '',
-        email: '',
-        username: '',
-        birthday: '',
-        password: ''
+      form: {
+        url: this.url
       }
     };
-  },
-  methods: {
-    submitForm: function submitForm(event) {
-      var _this = this;
+  }
+});
 
-      axios__WEBPACK_IMPORTED_MODULE_0___default.a.post("/Admin", this.fields).then(function (response) {
-        alert("Message sent!");
-        _this.fields = {};
-      })["catch"](function (error) {
-        console.log(error);
-      });
-    }
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/DataTable.vue?vue&type=script&lang=js&":
+/*!********************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/DataTable.vue?vue&type=script&lang=js& ***!
+  \********************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var mdbvue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! mdbvue */ "./node_modules/mdbvue/lib/index.js");
+/* harmony import */ var mdbvue__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(mdbvue__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _ModalTable__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ModalTable */ "./resources/js/components/ModalTable.vue");
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  name: 'TablePage',
+  components: {
+    mdbTbl: mdbvue__WEBPACK_IMPORTED_MODULE_0__["mdbTbl"],
+    mdbTblHead: mdbvue__WEBPACK_IMPORTED_MODULE_0__["mdbTblHead"],
+    mdbTblBody: mdbvue__WEBPACK_IMPORTED_MODULE_0__["mdbTblBody"],
+    mdbBtn: mdbvue__WEBPACK_IMPORTED_MODULE_0__["mdbBtn"]
   }
 });
 
@@ -2153,6 +2190,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'Basic',
+  props: ['url_webmaster', 'url_admin'],
   components: {
     mdbCard: mdbvue__WEBPACK_IMPORTED_MODULE_0__["mdbCard"],
     mdbCardImage: mdbvue__WEBPACK_IMPORTED_MODULE_0__["mdbCardImage"],
@@ -2163,6 +2201,83 @@ __webpack_require__.r(__webpack_exports__);
     mdbMask: mdbvue__WEBPACK_IMPORTED_MODULE_0__["mdbMask"],
     mdbInput: mdbvue__WEBPACK_IMPORTED_MODULE_0__["mdbInput"],
     mdbBtn: mdbvue__WEBPACK_IMPORTED_MODULE_0__["mdbBtn"]
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/ModalTable.vue?vue&type=script&lang=js&":
+/*!*********************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/ModalTable.vue?vue&type=script&lang=js& ***!
+  \*********************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var mdbvue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! mdbvue */ "./node_modules/mdbvue/lib/index.js");
+/* harmony import */ var mdbvue__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(mdbvue__WEBPACK_IMPORTED_MODULE_0__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  name: 'modalTable',
+  components: {
+    mdbModal: mdbvue__WEBPACK_IMPORTED_MODULE_0__["mdbModal"],
+    mdbModalHeader: mdbvue__WEBPACK_IMPORTED_MODULE_0__["mdbModalHeader"],
+    mdbModalTitle: mdbvue__WEBPACK_IMPORTED_MODULE_0__["mdbModalTitle"],
+    mdbModalBody: mdbvue__WEBPACK_IMPORTED_MODULE_0__["mdbModalBody"],
+    mdbModalFooter: mdbvue__WEBPACK_IMPORTED_MODULE_0__["mdbModalFooter"],
+    mdbBtn: mdbvue__WEBPACK_IMPORTED_MODULE_0__["mdbBtn"],
+    mdbTbl: mdbvue__WEBPACK_IMPORTED_MODULE_0__["mdbTbl"],
+    mdbTblHead: mdbvue__WEBPACK_IMPORTED_MODULE_0__["mdbTblHead"],
+    mdbTblBody: mdbvue__WEBPACK_IMPORTED_MODULE_0__["mdbTblBody"]
+  },
+  data: function data() {
+    return {
+      modal: false
+    };
   }
 });
 
@@ -20881,150 +20996,210 @@ var render = function() {
         "mdb-col",
         { staticClass: "pb-2", attrs: { md: "12" } },
         [
-          _c(
-            "mdb-card",
-            { staticClass: "elegant-text grey lighten-4" },
-            [
-              _c(
-                "mdb-card-header",
-                { staticClass: "pt-4 white" },
-                [
-                  _c("mdb-card-title", [
-                    _c("strong", [_vm._v("Ajouter Administratif")])
-                  ])
-                ],
-                1
-              ),
+          _c("mdb-card", { staticClass: "elegant-text grey lighten-4" }, [
+            _c(
+              "form",
+              { attrs: { method: "POST", action: _vm.form.url } },
+              [
+                _c(
+                  "mdb-card-header",
+                  { staticClass: "pt-4 white" },
+                  [
+                    _c("mdb-card-title", [
+                      _c("strong", [_vm._v("Ajouter Administratif ")])
+                    ])
+                  ],
+                  1
+                ),
+                _vm._v(" "),
+                _c(
+                  "mdb-card-body",
+                  [
+                    _c(
+                      "mdb-row",
+                      [
+                        _c(
+                          "mdb-col",
+                          { staticClass: "col-12 col-md-6" },
+                          [
+                            _c("mdb-input", {
+                              attrs: {
+                                name: "name",
+                                label: "Full Name",
+                                far: "",
+                                icon: "edit",
+                                required: ""
+                              }
+                            }),
+                            _vm._v(" "),
+                            _c("mdb-input", {
+                              attrs: {
+                                name: "adress",
+                                label: "Adress",
+                                far: "",
+                                icon: "map",
+                                required: ""
+                              }
+                            }),
+                            _vm._v(" "),
+                            _c("mdb-input", {
+                              attrs: {
+                                name: "login",
+                                label: "Username",
+                                far: "",
+                                icon: "user",
+                                required: ""
+                              }
+                            })
+                          ],
+                          1
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "mdb-col",
+                          { staticClass: "col-12 col-md-6" },
+                          [
+                            _c("mdb-input", {
+                              attrs: {
+                                name: "birthday",
+                                label: "Birthday",
+                                type: "date",
+                                far: "",
+                                icon: "calendar-alt",
+                                required: ""
+                              }
+                            }),
+                            _vm._v(" "),
+                            _c("mdb-input", {
+                              attrs: {
+                                name: "email",
+                                label: "E-Mail",
+                                type: "email",
+                                far: "",
+                                icon: "envelope",
+                                required: ""
+                              }
+                            }),
+                            _vm._v(" "),
+                            _c("mdb-input", {
+                              attrs: {
+                                name: "password",
+                                label: "Password",
+                                type: "password",
+                                far: "",
+                                icon: "keyboard",
+                                required: ""
+                              }
+                            })
+                          ],
+                          1
+                        )
+                      ],
+                      1
+                    )
+                  ],
+                  1
+                ),
+                _vm._v(" "),
+                _c(
+                  "mdb-card-footer",
+                  { staticClass: "d-flex white justify-content-end" },
+                  [
+                    _c(
+                      "mdb-btn",
+                      {
+                        attrs: {
+                          outline: "elegant",
+                          type: "submit",
+                          icon: "user-plus"
+                        }
+                      },
+                      [_vm._v("Ajouter")]
+                    )
+                  ],
+                  1
+                )
+              ],
+              1
+            )
+          ])
+        ],
+        1
+      )
+    ],
+    1
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/DataTable.vue?vue&type=template&id=4b997e69&":
+/*!************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/DataTable.vue?vue&type=template&id=4b997e69& ***!
+  \************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    [
+      _c(
+        "mdb-tbl",
+        { attrs: { responsive: "", btn: "", striped: "", bordered: "" } },
+        [
+          _c("mdb-tbl-head", [
+            _c("tr", [
+              _c("th", [_vm._v("#")]),
+              _vm._v(" "),
+              _c("th", [_vm._v("Nom")]),
+              _vm._v(" "),
+              _c("th"),
+              _vm._v(" "),
+              _c("th")
+            ])
+          ]),
+          _vm._v(" "),
+          _c("mdb-tbl-body", [
+            _c("tr", [
+              _c("td", [_vm._v("1")]),
+              _vm._v(" "),
+              _c("td", [_vm._v("Diaeddin BOUIDAINE")]),
+              _vm._v(" "),
+              _c("td", [_c("modal-table")], 1),
               _vm._v(" "),
               _c(
-                "mdb-card-body",
-                [
-                  _c(
-                    "mdb-row",
-                    [
-                      _c(
-                        "mdb-col",
-                        { staticClass: "col-12 col-md-6" },
-                        [
-                          _c("mdb-input", {
-                            attrs: {
-                              label: "Full Name",
-                              far: "",
-                              icon: "edit"
-                            },
-                            model: {
-                              value: _vm.feilds.name,
-                              callback: function($$v) {
-                                _vm.$set(_vm.feilds, "name", $$v)
-                              },
-                              expression: "feilds.name"
-                            }
-                          }),
-                          _vm._v(" "),
-                          _c("mdb-input", {
-                            attrs: { label: "Adress", far: "", icon: "map" },
-                            model: {
-                              value: _vm.feilds.adress,
-                              callback: function($$v) {
-                                _vm.$set(_vm.feilds, "adress", $$v)
-                              },
-                              expression: "feilds.adress"
-                            }
-                          }),
-                          _vm._v(" "),
-                          _c("mdb-input", {
-                            attrs: { label: "Username", far: "", icon: "user" },
-                            model: {
-                              value: _vm.feilds.username,
-                              callback: function($$v) {
-                                _vm.$set(_vm.feilds, "username", $$v)
-                              },
-                              expression: "feilds.username"
-                            }
-                          })
-                        ],
-                        1
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "mdb-col",
-                        { staticClass: "col-12 col-md-6" },
-                        [
-                          _c("mdb-input", {
-                            attrs: {
-                              label: "Birthday",
-                              type: "date",
-                              far: "",
-                              icon: "calendar-alt"
-                            },
-                            model: {
-                              value: _vm.feilds.birthday,
-                              callback: function($$v) {
-                                _vm.$set(_vm.feilds, "birthday", $$v)
-                              },
-                              expression: "feilds.birthday"
-                            }
-                          }),
-                          _vm._v(" "),
-                          _c("mdb-input", {
-                            attrs: {
-                              label: "E-Mail",
-                              type: "email",
-                              far: "",
-                              icon: "envelope"
-                            },
-                            model: {
-                              value: _vm.feilds.email,
-                              callback: function($$v) {
-                                _vm.$set(_vm.feilds, "email", $$v)
-                              },
-                              expression: "feilds.email"
-                            }
-                          }),
-                          _vm._v(" "),
-                          _c("mdb-input", {
-                            attrs: {
-                              label: "Password",
-                              type: "password",
-                              far: "",
-                              icon: "keyboard"
-                            },
-                            model: {
-                              value: _vm.feilds.password,
-                              callback: function($$v) {
-                                _vm.$set(_vm.feilds, "password", $$v)
-                              },
-                              expression: "feilds.password"
-                            }
-                          })
-                        ],
-                        1
-                      )
-                    ],
-                    1
-                  )
-                ],
-                1
-              ),
-              _vm._v(" "),
-              _c(
-                "mdb-card-footer",
-                { staticClass: "d-flex white justify-content-end" },
+                "td",
                 [
                   _c(
                     "mdb-btn",
                     {
-                      attrs: { outline: "elegant", icon: "user-plus" },
-                      on: { click: _vm.submitForm }
+                      staticClass: "btn m-0",
+                      attrs: {
+                        tag: "a",
+                        role: "button",
+                        outline: "danger",
+                        href: "#"
+                      }
                     },
-                    [_vm._v("Ajouter")]
+                    [_vm._v(" Supprimer")]
                   )
                 ],
                 1
               )
-            ],
-            1
-          )
+            ])
+          ])
         ],
         1
       )
@@ -21117,19 +21292,157 @@ var render = function() {
               [
                 _c(
                   "mdb-btn",
-                  { attrs: { tag: "a", role: "button", href: "/WebMaster" } },
+                  {
+                    attrs: { tag: "a", role: "button", href: _vm.url_webmaster }
+                  },
                   [_vm._v("Web Master")]
                 ),
                 _vm._v(" "),
                 _c(
                   "mdb-btn",
-                  { attrs: { tag: "a", role: "button", href: "/Admin" } },
+                  { attrs: { tag: "a", role: "button", href: _vm.url_admin } },
                   [_vm._v("Administrateur")]
                 )
               ],
               1
             )
           ])
+        ],
+        1
+      )
+    ],
+    1
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/ModalTable.vue?vue&type=template&id=c457ad68&":
+/*!*************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/ModalTable.vue?vue&type=template&id=c457ad68& ***!
+  \*************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    [
+      _c(
+        "mdb-btn",
+        {
+          staticClass: "btn",
+          attrs: { outline: "elegant" },
+          nativeOn: {
+            click: function($event) {
+              _vm.modal = true
+            }
+          }
+        },
+        [_vm._v("Consulter")]
+      ),
+      _vm._v(" "),
+      _c(
+        "mdb-modal",
+        {
+          attrs: { size: "lg", show: _vm.modal },
+          on: {
+            close: function($event) {
+              _vm.modal = false
+            }
+          }
+        },
+        [
+          _c(
+            "mdb-modal-header",
+            [_c("mdb-modal-title", [_vm._v("Modal title")])],
+            1
+          ),
+          _vm._v(" "),
+          _c("mdb-modal-body", [
+            _c(
+              "div",
+              [
+                _c(
+                  "mdb-tbl",
+                  { attrs: { responsive: "" } },
+                  [
+                    _c("mdb-tbl-head", [
+                      _c("tr", [
+                        _c("th", [_vm._v("Matricule")]),
+                        _vm._v(" "),
+                        _c("th", [_vm._v("Nom")]),
+                        _vm._v(" "),
+                        _c("th", [_vm._v("Date De Naissance")]),
+                        _vm._v(" "),
+                        _c("th", [_vm._v("Adresse")]),
+                        _vm._v(" "),
+                        _c("th", [_vm._v("Email")]),
+                        _vm._v(" "),
+                        _c("th", [_vm._v("Groupe")]),
+                        _vm._v(" "),
+                        _c("th", [_vm._v("Abscences")]),
+                        _vm._v(" "),
+                        _c("th", [_vm._v("Moyennes")])
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("mdb-tbl-body", [
+                      _c("tr", [
+                        _c("th", [_vm._v("Diaeddin")]),
+                        _vm._v(" "),
+                        _c("td", [_vm._v("Diaeddin")]),
+                        _vm._v(" "),
+                        _c("td", [_vm._v("Diaeddin")]),
+                        _vm._v(" "),
+                        _c("td", [_vm._v("Diaeddin")]),
+                        _vm._v(" "),
+                        _c("td", [_vm._v("Diaeddin")]),
+                        _vm._v(" "),
+                        _c("td", [_vm._v("Diaeddin")]),
+                        _vm._v(" "),
+                        _c("td", [_vm._v("Diaeddin")]),
+                        _vm._v(" "),
+                        _c("td", [_vm._v("Diaeddin")])
+                      ])
+                    ])
+                  ],
+                  1
+                )
+              ],
+              1
+            )
+          ]),
+          _vm._v(" "),
+          _c(
+            "mdb-modal-footer",
+            [
+              _c(
+                "mdb-btn",
+                {
+                  attrs: { color: "danger", size: "sm" },
+                  nativeOn: {
+                    click: function($event) {
+                      _vm.modal = false
+                    }
+                  }
+                },
+                [_vm._v("Close")]
+              )
+            ],
+            1
+          )
         ],
         1
       )
@@ -21161,7 +21474,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "mdb-navbar",
-    { attrs: { expand: "large", dark: "", color: "elegant" } },
+    { attrs: { expand: "large", dark: "", color: "elegant", position: "top" } },
     [
       _c("mdb-navbar-brand", { attrs: { href: "#" } }, [
         _c("img", {
@@ -21424,6 +21737,7 @@ var render = function() {
           { attrs: { href: "#!" } },
           [
             _c("mdb-card-image", {
+              staticStyle: { height: "200px" },
               attrs: {
                 src:
                   "https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20%282%29.jpg",
@@ -33653,7 +33967,9 @@ Vue.component('navbar-compo', __webpack_require__(/*! ./components/NavBar.vue */
 Vue.component('login-compo', __webpack_require__(/*! ./components/Login.vue */ "./resources/js/components/Login.vue")["default"]);
 Vue.component('tab-compo', __webpack_require__(/*! ./components/Tab.vue */ "./resources/js/components/Tab.vue")["default"]);
 Vue.component('user-card', __webpack_require__(/*! ./components/UserCard.vue */ "./resources/js/components/UserCard.vue")["default"]);
-Vue.component('add-admin', __webpack_require__(/*! ./components/AddAdmin.vue */ "./resources/js/components/AddAdmin.vue")["default"]); //Vue.component('login', require('./components/LoginForm.vue'));
+Vue.component('add-admin', __webpack_require__(/*! ./components/AddAdmin.vue */ "./resources/js/components/AddAdmin.vue")["default"]);
+Vue.component('data-table', __webpack_require__(/*! ./components/DataTable.vue */ "./resources/js/components/DataTable.vue")["default"]);
+Vue.component('modal-table', __webpack_require__(/*! ./components/ModalTable.vue */ "./resources/js/components/ModalTable.vue")["default"]); //Vue.component('login', require('./components/LoginForm.vue'));
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -33768,6 +34084,75 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/components/DataTable.vue":
+/*!***********************************************!*\
+  !*** ./resources/js/components/DataTable.vue ***!
+  \***********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _DataTable_vue_vue_type_template_id_4b997e69___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./DataTable.vue?vue&type=template&id=4b997e69& */ "./resources/js/components/DataTable.vue?vue&type=template&id=4b997e69&");
+/* harmony import */ var _DataTable_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./DataTable.vue?vue&type=script&lang=js& */ "./resources/js/components/DataTable.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _DataTable_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _DataTable_vue_vue_type_template_id_4b997e69___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _DataTable_vue_vue_type_template_id_4b997e69___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/DataTable.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/DataTable.vue?vue&type=script&lang=js&":
+/*!************************************************************************!*\
+  !*** ./resources/js/components/DataTable.vue?vue&type=script&lang=js& ***!
+  \************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_DataTable_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./DataTable.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/DataTable.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_DataTable_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/DataTable.vue?vue&type=template&id=4b997e69&":
+/*!******************************************************************************!*\
+  !*** ./resources/js/components/DataTable.vue?vue&type=template&id=4b997e69& ***!
+  \******************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_DataTable_vue_vue_type_template_id_4b997e69___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./DataTable.vue?vue&type=template&id=4b997e69& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/DataTable.vue?vue&type=template&id=4b997e69&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_DataTable_vue_vue_type_template_id_4b997e69___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_DataTable_vue_vue_type_template_id_4b997e69___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
 /***/ "./resources/js/components/Login.vue":
 /*!*******************************************!*\
   !*** ./resources/js/components/Login.vue ***!
@@ -33832,6 +34217,75 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Login_vue_vue_type_template_id_6bdc8b8e___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Login_vue_vue_type_template_id_6bdc8b8e___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/js/components/ModalTable.vue":
+/*!************************************************!*\
+  !*** ./resources/js/components/ModalTable.vue ***!
+  \************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _ModalTable_vue_vue_type_template_id_c457ad68___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ModalTable.vue?vue&type=template&id=c457ad68& */ "./resources/js/components/ModalTable.vue?vue&type=template&id=c457ad68&");
+/* harmony import */ var _ModalTable_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ModalTable.vue?vue&type=script&lang=js& */ "./resources/js/components/ModalTable.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _ModalTable_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _ModalTable_vue_vue_type_template_id_c457ad68___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _ModalTable_vue_vue_type_template_id_c457ad68___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/ModalTable.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/ModalTable.vue?vue&type=script&lang=js&":
+/*!*************************************************************************!*\
+  !*** ./resources/js/components/ModalTable.vue?vue&type=script&lang=js& ***!
+  \*************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ModalTable_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./ModalTable.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/ModalTable.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ModalTable_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/ModalTable.vue?vue&type=template&id=c457ad68&":
+/*!*******************************************************************************!*\
+  !*** ./resources/js/components/ModalTable.vue?vue&type=template&id=c457ad68& ***!
+  \*******************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ModalTable_vue_vue_type_template_id_c457ad68___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./ModalTable.vue?vue&type=template&id=c457ad68& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/ModalTable.vue?vue&type=template&id=c457ad68&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ModalTable_vue_vue_type_template_id_c457ad68___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ModalTable_vue_vue_type_template_id_c457ad68___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 

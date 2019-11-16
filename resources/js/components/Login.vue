@@ -19,8 +19,8 @@
                 <mdb-input label="Your password" icon="lock" type="password"/>
                 </div>
                 <div class="text-center align-content-center">
-                <mdb-btn tag="a" role="button" href="/WebMaster">Web Master</mdb-btn>
-                <mdb-btn tag="a" role="button" href="/Admin">Administrateur</mdb-btn>
+                <mdb-btn tag="a" role="button" v-bind:href="url_webmaster">Web Master</mdb-btn>
+                <mdb-btn tag="a" role="button" v-bind:href="url_admin">Administrateur</mdb-btn>
                 </div>
             </form>
 		</mdb-card-body>
@@ -31,6 +31,7 @@
   import { mdbCard, mdbCardImage, mdbCardBody, mdbCardTitle, mdbCardText ,mdbView, mdbMask, mdbInput, mdbBtn } from 'mdbvue';
   export default {
     name: 'Basic',
+    props: ['url_webmaster','url_admin'],
     components: {
         mdbCard,
 		mdbCardImage,
@@ -41,6 +42,6 @@
 		mdbMask,
         mdbInput,
         mdbBtn
-    },
+    }
   }
 </script>

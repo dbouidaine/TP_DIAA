@@ -4,7 +4,7 @@
 			<a href="#!">
 				<mdb-card-image
 					src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20%282%29.jpg"
-					alt="Card image cap"/>
+					alt="Card image cap" style="height:200px;"/>
 				<mdb-mask flex-center waves overlay="white-slight"></mdb-mask>
 			</a>
 		</mdb-view>

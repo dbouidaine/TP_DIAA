@@ -13,18 +13,26 @@ class AdministratifController extends Controller
         //return view('administratif');
     }
 
-    public function postForm(AdministratifRequest $request)
-    { 
-        
+    public function postForm(Request $request)
+    {   
+        $request->validate([
+            'name' => 'required',
+            'birthday' => 'required',
+            'adress' => 'required',
+            'email' => 'required|email|unique:administratifs',
+            'login' => 'required|unique:administratifs',
+            'password' => 'required',
+        ]); 
+       
         $administratif = new Administratif();
-        $administratif->nom = $request->input('nom');
-        $administratif->dateNaissance = $request->input('dateNaissance');
-        $administratif->adresse = $request->input('adresse');
+        $administratif->nom = $request->input('name');
+        $administratif->dateNaissance = $request->input('birthday');
+        $administratif->adresse = $request->input('adress');
         $administratif->email = $request->input('email');
         $administratif->login = $request->input('login');
-        $administratif->motPasse = $request->input('motPasse');
+        $administratif->motPasse = $request->input('password');
         $administratif->save();
-
-        return response()->json(['result'=>'success'],200);
+        
+        return redirect()->route('webmaster')->with('success','administratif ajouté avec success!');
     }
 }
