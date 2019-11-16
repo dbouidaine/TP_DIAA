@@ -18,9 +18,7 @@ Route::get('/WebMaster', function () {
     return view('WebMaster');
 })->name('webmaster');
 
-Route::get('/Admin', function () {
-    return view('Admin');
-});
+Route::get('/Administratif','EtudiantController@getEtudiants');
 
 Route::get('Admin', 'AdministratifController@getForm');
 Route::post('/Admin','AdministratifController@postForm');

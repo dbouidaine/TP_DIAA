@@ -22,14 +22,14 @@
                     </mdb-tbl-head>
                     <mdb-tbl-body>
                         <tr>
-                            <th>Diaeddin</th>
-                            <td>Diaeddin</td>
-                            <td>Diaeddin</td>
-                            <td>Diaeddin</td>
-                            <td>Diaeddin</td>
-                            <td>Diaeddin</td>
-                            <td>Diaeddin</td>
-                            <td>Diaeddin</td>
+                            <th>{{std.matricule}}</th>
+                            <td>{{std.nom}}</td>
+                            <td>{{std.dateNaissance}}</td>
+                            <td>{{std.adresse}}</td>
+                            <td>{{std.email}}</td>
+                            <td>{{std.groupe}}</td>
+                            <td>{{std.nbAbsences}}</td>
+                            <td>{{std.moyennes}}</td>
                         </tr>
                     </mdb-tbl-body>
                 </mdb-tbl>
@@ -45,6 +45,9 @@
   import { mdbTbl,mdbTblHead,mdbTblBody,mdbModal, mdbModalHeader, mdbModalTitle, mdbModalBody, mdbModalFooter, mdbBtn } from 'mdbvue';
   export default {
     name:'modalTable' , 
+    props:{
+     std:Object,
+    },
     components: {
       mdbModal,
       mdbModalHeader,

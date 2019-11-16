@@ -84,5 +84,12 @@ class EtudiantController extends Controller
 
         return view('show',  compact('etudiant'));
     }
+    public function getEtudiants() 
+    {
+      $etudiants=Etudiant::all(); 
+      return view('admin',['etudiants'=>$etudiants]); 
+       
+
+    }
 
 }

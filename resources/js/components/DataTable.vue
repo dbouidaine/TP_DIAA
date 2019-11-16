@@ -2,6 +2,7 @@
   <div>
     <mdb-tbl responsive btn striped bordered>
       <mdb-tbl-head>
+        
          <tr>
             <th>#</th>
             <th>Nom</th>
@@ -11,10 +12,10 @@
           </tr>
           </mdb-tbl-head>
           <mdb-tbl-body>
-            <tr>
+            <tr v-for="student in students" :key="student">
               <td>1</td>
-              <td>Diaeddin BOUIDAINE</td>
-              <td><modal-table /></td>
+              <td>{{student.nom}} </td>
+              <td><modal-table v-bind:std="student"/></td>
               <td><mdb-btn tag="a" role="button" outline="danger" href="#" class="btn m-0"> Supprimer</mdb-btn></td>
               </tr>
           </mdb-tbl-body>
@@ -26,11 +27,17 @@
   import { modalTable  } from './ModalTable';
   export default {
     name: 'TablePage',
+    props: {etudiants : {type:Array,}},
     components: {
       mdbTbl,
       mdbTblHead,
       mdbTblBody,
       mdbBtn
+    }, data() 
+    {
+      return {
+        students:this.etudiants
+      }; 
     }
   }
 </script>

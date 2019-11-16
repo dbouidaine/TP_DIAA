@@ -2133,15 +2133,26 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'TablePage',
+  props: {
+    etudiants: {
+      type: Array
+    }
+  },
   components: {
     mdbTbl: mdbvue__WEBPACK_IMPORTED_MODULE_0__["mdbTbl"],
     mdbTblHead: mdbvue__WEBPACK_IMPORTED_MODULE_0__["mdbTblHead"],
     mdbTblBody: mdbvue__WEBPACK_IMPORTED_MODULE_0__["mdbTblBody"],
     mdbBtn: mdbvue__WEBPACK_IMPORTED_MODULE_0__["mdbBtn"]
+  },
+  data: function data() {
+    return {
+      students: this.etudiants
+    };
   }
 });
 
@@ -2263,6 +2274,9 @@ __webpack_require__.r(__webpack_exports__);
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'modalTable',
+  props: {
+    std: Object
+  },
   components: {
     mdbModal: mdbvue__WEBPACK_IMPORTED_MODULE_0__["mdbModal"],
     mdbModalHeader: mdbvue__WEBPACK_IMPORTED_MODULE_0__["mdbModalHeader"],
@@ -21171,35 +21185,39 @@ var render = function() {
             ])
           ]),
           _vm._v(" "),
-          _c("mdb-tbl-body", [
-            _c("tr", [
-              _c("td", [_vm._v("1")]),
-              _vm._v(" "),
-              _c("td", [_vm._v("Diaeddin BOUIDAINE")]),
-              _vm._v(" "),
-              _c("td", [_c("modal-table")], 1),
-              _vm._v(" "),
-              _c(
-                "td",
-                [
-                  _c(
-                    "mdb-btn",
-                    {
-                      staticClass: "btn m-0",
-                      attrs: {
-                        tag: "a",
-                        role: "button",
-                        outline: "danger",
-                        href: "#"
-                      }
-                    },
-                    [_vm._v(" Supprimer")]
-                  )
-                ],
-                1
-              )
-            ])
-          ])
+          _c(
+            "mdb-tbl-body",
+            _vm._l(_vm.students, function(student) {
+              return _c("tr", { key: student }, [
+                _c("td", [_vm._v("1")]),
+                _vm._v(" "),
+                _c("td", [_vm._v(_vm._s(student.nom) + " ")]),
+                _vm._v(" "),
+                _c("td", [_c("modal-table", { attrs: { std: student } })], 1),
+                _vm._v(" "),
+                _c(
+                  "td",
+                  [
+                    _c(
+                      "mdb-btn",
+                      {
+                        staticClass: "btn m-0",
+                        attrs: {
+                          tag: "a",
+                          role: "button",
+                          outline: "danger",
+                          href: "#"
+                        }
+                      },
+                      [_vm._v(" Supprimer")]
+                    )
+                  ],
+                  1
+                )
+              ])
+            }),
+            0
+          )
         ],
         1
       )
@@ -21400,21 +21418,21 @@ var render = function() {
                     _vm._v(" "),
                     _c("mdb-tbl-body", [
                       _c("tr", [
-                        _c("th", [_vm._v("Diaeddin")]),
+                        _c("th", [_vm._v(_vm._s(_vm.std.matricule))]),
                         _vm._v(" "),
-                        _c("td", [_vm._v("Diaeddin")]),
+                        _c("td", [_vm._v(_vm._s(_vm.std.nom))]),
                         _vm._v(" "),
-                        _c("td", [_vm._v("Diaeddin")]),
+                        _c("td", [_vm._v(_vm._s(_vm.std.dateNaissance))]),
                         _vm._v(" "),
-                        _c("td", [_vm._v("Diaeddin")]),
+                        _c("td", [_vm._v(_vm._s(_vm.std.adresse))]),
                         _vm._v(" "),
-                        _c("td", [_vm._v("Diaeddin")]),
+                        _c("td", [_vm._v(_vm._s(_vm.std.email))]),
                         _vm._v(" "),
-                        _c("td", [_vm._v("Diaeddin")]),
+                        _c("td", [_vm._v(_vm._s(_vm.std.groupe))]),
                         _vm._v(" "),
-                        _c("td", [_vm._v("Diaeddin")]),
+                        _c("td", [_vm._v(_vm._s(_vm.std.nbAbsences))]),
                         _vm._v(" "),
-                        _c("td", [_vm._v("Diaeddin")])
+                        _c("td", [_vm._v(_vm._s(_vm.std.moyennes))])
                       ])
                     ])
                   ],
