@@ -33,6 +33,6 @@ class AdministratifController extends Controller
         $administratif->motPasse = $request->input('password');
         $administratif->save();
         
-        return redirect()->route('webmaster')->with('success','administratif ajouté avec success!');
+        return redirect()->route('webmaster')->with('success','administratif ajouté avec successes!');
     }
 }

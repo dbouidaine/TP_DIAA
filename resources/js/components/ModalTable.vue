@@ -1,13 +1,13 @@
 <template>
   <div>
-    <mdb-btn outline="elegant" @click.native="modal = true"  class="btn">Consulter</mdb-btn>
-    <mdb-modal size="lg" :show="modal" @close="modal = false">
+    <mdb-btn @click.native="modal = true"  class="btn">Consulter</mdb-btn>
+    <mdb-modal style="margin-top:4.9%;" size="lg" :show="modal" @close="modal = false">
         <mdb-modal-header>
             <mdb-modal-title>Modal title</mdb-modal-title>
         </mdb-modal-header>
         <mdb-modal-body>
             <div>
-                <mdb-tbl responsive>
+                <mdb-tbl responsive class="table table-hover tabl-light" >
                     <mdb-tbl-head>
                         <tr>
                             <th>Matricule</th>
@@ -36,7 +36,7 @@
             </div>
         </mdb-modal-body>
         <mdb-modal-footer>
-            <mdb-btn color="danger" size="sm" @click.native="modal = false">Close</mdb-btn>
+            <mdb-btn color="danger" @click.native="modal = false">Close</mdb-btn>
         </mdb-modal-footer>
     </mdb-modal>
   </div>

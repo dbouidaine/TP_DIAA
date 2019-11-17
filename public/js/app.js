@@ -2134,6 +2134,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -2341,85 +2344,6 @@ __webpack_require__.r(__webpack_exports__);
     mdbDropdownToggle: mdbvue__WEBPACK_IMPORTED_MODULE_0__["mdbDropdownToggle"],
     mdbDropdownMenu: mdbvue__WEBPACK_IMPORTED_MODULE_0__["mdbDropdownMenu"],
     mdbDropdownItem: mdbvue__WEBPACK_IMPORTED_MODULE_0__["mdbDropdownItem"]
-  }
-});
-
-/***/ }),
-
-/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Tab.vue?vue&type=script&lang=js&":
-/*!**************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/Tab.vue?vue&type=script&lang=js& ***!
-  \**************************************************************************************************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var mdbvue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! mdbvue */ "./node_modules/mdbvue/lib/index.js");
-/* harmony import */ var mdbvue__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(mdbvue__WEBPACK_IMPORTED_MODULE_0__);
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-/* harmony default export */ __webpack_exports__["default"] = ({
-  name: 'tab',
-  components: {
-    mdbContainer: mdbvue__WEBPACK_IMPORTED_MODULE_0__["mdbContainer"],
-    mdbRow: mdbvue__WEBPACK_IMPORTED_MODULE_0__["mdbRow"],
-    mdbCol: mdbvue__WEBPACK_IMPORTED_MODULE_0__["mdbCol"],
-    mdbBtn: mdbvue__WEBPACK_IMPORTED_MODULE_0__["mdbBtn"],
-    mdbCard: mdbvue__WEBPACK_IMPORTED_MODULE_0__["mdbCard"],
-    mdbCardTitle: mdbvue__WEBPACK_IMPORTED_MODULE_0__["mdbCardTitle"],
-    mdbCardText: mdbvue__WEBPACK_IMPORTED_MODULE_0__["mdbCardText"],
-    mdbCardFooter: mdbvue__WEBPACK_IMPORTED_MODULE_0__["mdbCardFooter"],
-    mdbCardBody: mdbvue__WEBPACK_IMPORTED_MODULE_0__["mdbCardBody"],
-    mdbCardHeader: mdbvue__WEBPACK_IMPORTED_MODULE_0__["mdbCardHeader"],
-    mdbListGroup: mdbvue__WEBPACK_IMPORTED_MODULE_0__["mdbListGroup"],
-    mdbListGroupItem: mdbvue__WEBPACK_IMPORTED_MODULE_0__["mdbListGroupItem"],
-    mdbNavItem: mdbvue__WEBPACK_IMPORTED_MODULE_0__["mdbNavItem"],
-    mdbCardGroup: mdbvue__WEBPACK_IMPORTED_MODULE_0__["mdbCardGroup"],
-    mdbIcon: mdbvue__WEBPACK_IMPORTED_MODULE_0__["mdbIcon"],
-    mdbFooter: mdbvue__WEBPACK_IMPORTED_MODULE_0__["mdbFooter"],
-    mdbTab: mdbvue__WEBPACK_IMPORTED_MODULE_0__["mdbTab"],
-    mdbTabItem: mdbvue__WEBPACK_IMPORTED_MODULE_0__["mdbTabItem"],
-    mdbTabContent: mdbvue__WEBPACK_IMPORTED_MODULE_0__["mdbTabContent"],
-    mdbTabPane: mdbvue__WEBPACK_IMPORTED_MODULE_0__["mdbTabPane"]
-  },
-  data: function data() {
-    return {
-      active: 0
-    };
   }
 });
 
@@ -21121,13 +21045,7 @@ var render = function() {
                   [
                     _c(
                       "mdb-btn",
-                      {
-                        attrs: {
-                          outline: "elegant",
-                          type: "submit",
-                          icon: "user-plus"
-                        }
-                      },
+                      { attrs: { type: "submit", icon: "user-plus" } },
                       [_vm._v("Ajouter")]
                     )
                   ],
@@ -21169,6 +21087,14 @@ var render = function() {
   return _c(
     "div",
     [
+      _c("div", { staticStyle: { display: "none" } }, [
+        _vm._v(_vm._s((_vm.rang = 1)))
+      ]),
+      _vm._v(" "),
+      _vm._m(0),
+      _vm._v(" "),
+      _c("br"),
+      _vm._v(" "),
       _c(
         "mdb-tbl",
         { attrs: { responsive: "", btn: "", striped: "", bordered: "" } },
@@ -21188,8 +21114,8 @@ var render = function() {
           _c(
             "mdb-tbl-body",
             _vm._l(_vm.students, function(student) {
-              return _c("tr", { key: student }, [
-                _c("td", [_vm._v("1")]),
+              return _c("tr", { key: student, staticClass: "text-center" }, [
+                _c("td", [_vm._v(_vm._s(_vm.rang++))]),
                 _vm._v(" "),
                 _c("td", [_vm._v(_vm._s(student.nom) + " ")]),
                 _vm._v(" "),
@@ -21205,8 +21131,8 @@ var render = function() {
                         attrs: {
                           tag: "a",
                           role: "button",
-                          outline: "danger",
-                          href: "#"
+                          color: "danger",
+                          href: ""
                         }
                       },
                       [_vm._v(" Supprimer")]
@@ -21225,7 +21151,14 @@ var render = function() {
     1
   )
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("h2", [_c("strong", [_vm._v("La liste des étudiants : ")])])
+  }
+]
 render._withStripped = true
 
 
@@ -21361,7 +21294,6 @@ var render = function() {
         "mdb-btn",
         {
           staticClass: "btn",
-          attrs: { outline: "elegant" },
           nativeOn: {
             click: function($event) {
               _vm.modal = true
@@ -21374,6 +21306,7 @@ var render = function() {
       _c(
         "mdb-modal",
         {
+          staticStyle: { "margin-top": "4.9%" },
           attrs: { size: "lg", show: _vm.modal },
           on: {
             close: function($event) {
@@ -21394,7 +21327,10 @@ var render = function() {
               [
                 _c(
                   "mdb-tbl",
-                  { attrs: { responsive: "" } },
+                  {
+                    staticClass: "table table-hover tabl-light",
+                    attrs: { responsive: "" }
+                  },
                   [
                     _c("mdb-tbl-head", [
                       _c("tr", [
@@ -21449,7 +21385,7 @@ var render = function() {
               _c(
                 "mdb-btn",
                 {
-                  attrs: { color: "danger", size: "sm" },
+                  attrs: { color: "danger" },
                   nativeOn: {
                     click: function($event) {
                       _vm.modal = false
@@ -21511,10 +21447,6 @@ var render = function() {
             "mdb-navbar-nav",
             { attrs: { right: "" } },
             [
-              _c("mdb-nav-item", {
-                attrs: { href: "/Admin", active: "", icon: "home" }
-              }),
-              _vm._v(" "),
               _c(
                 "mdb-dropdown",
                 { staticClass: "nav-item", attrs: { tag: "li" } },
@@ -21540,174 +21472,6 @@ var render = function() {
                       _c("mdb-dropdown-item", { attrs: { href: "/" } }, [
                         _vm._v("Log Out")
                       ])
-                    ],
-                    1
-                  )
-                ],
-                1
-              )
-            ],
-            1
-          )
-        ],
-        1
-      )
-    ],
-    1
-  )
-}
-var staticRenderFns = []
-render._withStripped = true
-
-
-
-/***/ }),
-
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Tab.vue?vue&type=template&id=8dbef60c&":
-/*!******************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/Tab.vue?vue&type=template&id=8dbef60c& ***!
-  \******************************************************************************************************************************************************************************************************/
-/*! exports provided: render, staticRenderFns */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c(
-    "mdb-container",
-    [
-      _c(
-        "mdb-row",
-        { staticClass: "mt-4" },
-        [
-          _c(
-            "mdb-card",
-            { staticClass: "text-center" },
-            [
-              _c(
-                "mdb-card-header",
-                [
-                  _c(
-                    "mdb-tab",
-                    { staticClass: "card-header-tabs", attrs: { default: "" } },
-                    [
-                      _c(
-                        "mdb-tab-item",
-                        {
-                          attrs: { active: _vm.active == 0 },
-                          nativeOn: {
-                            click: function($event) {
-                              $event.preventDefault()
-                              _vm.active = 0
-                            }
-                          }
-                        },
-                        [_vm._v("Active")]
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "mdb-tab-item",
-                        {
-                          attrs: { active: _vm.active == 1 },
-                          nativeOn: {
-                            click: function($event) {
-                              $event.preventDefault()
-                              _vm.active = 1
-                            }
-                          }
-                        },
-                        [_vm._v("Link")]
-                      ),
-                      _vm._v(" "),
-                      _c("mdb-tab-item", { attrs: { disabled: "" } }, [
-                        _vm._v("Disabled")
-                      ])
-                    ],
-                    1
-                  )
-                ],
-                1
-              ),
-              _vm._v(" "),
-              _c(
-                "mdb-card-body",
-                [
-                  _c(
-                    "mdb-tab-content",
-                    [
-                      _vm.active == 0
-                        ? _c(
-                            "mdb-tab-pane",
-                            { key: "show1", staticClass: "fade" },
-                            [
-                              _c("mdb-card-title", [
-                                _vm._v("Special title treatment")
-                              ]),
-                              _vm._v(" "),
-                              _c("mdb-card-text", [
-                                _vm._v(
-                                  "With supporting text below as a natural lead-in to additional content."
-                                )
-                              ]),
-                              _vm._v(" "),
-                              _c("mdb-btn", { attrs: { color: "primary" } }, [
-                                _vm._v("go somewhere")
-                              ])
-                            ],
-                            1
-                          )
-                        : _vm._e(),
-                      _vm._v(" "),
-                      _vm.active == 1
-                        ? _c(
-                            "mdb-tab-pane",
-                            { key: "show2", staticClass: "fade" },
-                            [
-                              _c("mdb-card-title", [
-                                _vm._v("Special title treatment")
-                              ]),
-                              _vm._v(" "),
-                              _c("mdb-card-text", [
-                                _vm._v(
-                                  "With supporting text below as a natural lead-in to additional content."
-                                )
-                              ]),
-                              _vm._v(" "),
-                              _c("mdb-btn", { attrs: { color: "primary" } }, [
-                                _vm._v("go somewhere")
-                              ])
-                            ],
-                            1
-                          )
-                        : _vm._e(),
-                      _vm._v(" "),
-                      _vm.active == 2
-                        ? _c(
-                            "mdb-tab-pane",
-                            { key: "show3", staticClass: "fade" },
-                            [
-                              _c("mdb-card-title", [
-                                _vm._v("Special title treatment")
-                              ]),
-                              _vm._v(" "),
-                              _c("mdb-card-text", [
-                                _vm._v(
-                                  "With supporting text below as a natural lead-in to additional content."
-                                )
-                              ]),
-                              _vm._v(" "),
-                              _c("mdb-btn", { attrs: { color: "primary" } }, [
-                                _vm._v("go somewhere")
-                              ])
-                            ],
-                            1
-                          )
-                        : _vm._e()
                     ],
                     1
                   )
@@ -33983,11 +33747,10 @@ window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.
 
 Vue.component('navbar-compo', __webpack_require__(/*! ./components/NavBar.vue */ "./resources/js/components/NavBar.vue")["default"]);
 Vue.component('login-compo', __webpack_require__(/*! ./components/Login.vue */ "./resources/js/components/Login.vue")["default"]);
-Vue.component('tab-compo', __webpack_require__(/*! ./components/Tab.vue */ "./resources/js/components/Tab.vue")["default"]);
 Vue.component('user-card', __webpack_require__(/*! ./components/UserCard.vue */ "./resources/js/components/UserCard.vue")["default"]);
 Vue.component('add-admin', __webpack_require__(/*! ./components/AddAdmin.vue */ "./resources/js/components/AddAdmin.vue")["default"]);
 Vue.component('data-table', __webpack_require__(/*! ./components/DataTable.vue */ "./resources/js/components/DataTable.vue")["default"]);
-Vue.component('modal-table', __webpack_require__(/*! ./components/ModalTable.vue */ "./resources/js/components/ModalTable.vue")["default"]); //Vue.component('login', require('./components/LoginForm.vue'));
+Vue.component('modal-table', __webpack_require__(/*! ./components/ModalTable.vue */ "./resources/js/components/ModalTable.vue")["default"]); //Vue.component('login', require('./components/LoginForm.vue'));s
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -34373,75 +34136,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_NavBar_vue_vue_type_template_id_5dd24bca___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_NavBar_vue_vue_type_template_id_5dd24bca___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
-
-
-
-/***/ }),
-
-/***/ "./resources/js/components/Tab.vue":
-/*!*****************************************!*\
-  !*** ./resources/js/components/Tab.vue ***!
-  \*****************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _Tab_vue_vue_type_template_id_8dbef60c___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Tab.vue?vue&type=template&id=8dbef60c& */ "./resources/js/components/Tab.vue?vue&type=template&id=8dbef60c&");
-/* harmony import */ var _Tab_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Tab.vue?vue&type=script&lang=js& */ "./resources/js/components/Tab.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
-
-
-
-
-
-/* normalize component */
-
-var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
-  _Tab_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _Tab_vue_vue_type_template_id_8dbef60c___WEBPACK_IMPORTED_MODULE_0__["render"],
-  _Tab_vue_vue_type_template_id_8dbef60c___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
-  false,
-  null,
-  null,
-  null
-  
-)
-
-/* hot reload */
-if (false) { var api; }
-component.options.__file = "resources/js/components/Tab.vue"
-/* harmony default export */ __webpack_exports__["default"] = (component.exports);
-
-/***/ }),
-
-/***/ "./resources/js/components/Tab.vue?vue&type=script&lang=js&":
-/*!******************************************************************!*\
-  !*** ./resources/js/components/Tab.vue?vue&type=script&lang=js& ***!
-  \******************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Tab_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./Tab.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Tab.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Tab_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
-
-/***/ }),
-
-/***/ "./resources/js/components/Tab.vue?vue&type=template&id=8dbef60c&":
-/*!************************************************************************!*\
-  !*** ./resources/js/components/Tab.vue?vue&type=template&id=8dbef60c& ***!
-  \************************************************************************/
-/*! exports provided: render, staticRenderFns */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Tab_vue_vue_type_template_id_8dbef60c___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./Tab.vue?vue&type=template&id=8dbef60c& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/Tab.vue?vue&type=template&id=8dbef60c&");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Tab_vue_vue_type_template_id_8dbef60c___WEBPACK_IMPORTED_MODULE_0__["render"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Tab_vue_vue_type_template_id_8dbef60c___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 

@@ -15,8 +15,7 @@
         </div>
         <div class="col-md-8 col-12 mt-3 ml-md-4">
                 @if ($errors->any())
-                    <div class="alert alert-danger">
-                            <button type="button" class="close" data-dismiss="alert">×</button>
+                    <div id="alertt" class="alert alert-danger successs">
                     <ul>
                         @foreach ($errors->all() as $error)
                             <li>{{ $error }}</li>
@@ -25,8 +24,7 @@
                     </div>
                 @endif
                 @if ($message = Session::get('success'))
-                <div class="alert alert-success alert-block">
-                    <button type="button" class="close" data-dismiss="alert">×</button>	
+                <div id="alertt" class="alert alert-success alert-block sucesss">
                         <strong>{{ $message }}</strong>
                 </div>
                 @endif
@@ -36,6 +34,7 @@
         </div>
     </div>
 </div>
-<script type="text/javascript" src="js/app.js"></script>
+<script type="text/javascript" src="js/app.js">
+</script>
 </body>
 </html>

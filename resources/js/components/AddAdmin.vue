@@ -23,7 +23,7 @@
           </mdb-row>
         </mdb-card-body>
         <mdb-card-footer class="d-flex white justify-content-end">
-          <mdb-btn outline="elegant" type="submit" icon="user-plus">Ajouter</mdb-btn>
+          <mdb-btn type="submit" icon="user-plus">Ajouter</mdb-btn>
         </mdb-card-footer>
         </form>
       </mdb-card>

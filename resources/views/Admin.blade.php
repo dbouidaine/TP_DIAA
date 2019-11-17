@@ -14,8 +14,6 @@
         </div>
         <div class="card col-md-8 col-12 mt-3 ml-md-4 p-5">
             <div style="justify-content-center">
-                <h2 color="gray">La liste des etudiants:</h2>
-                <br>
              <div id="tb">
                 <data-table v-bind:etudiants={!!json_encode( $etudiants) !!} />
             </div>

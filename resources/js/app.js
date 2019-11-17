@@ -8,7 +8,6 @@ require('./bootstrap');
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'mdbvue/lib/css/mdb.min.css';
 import '@fortawesome/fontawesome-free/css/all.css'; 
-
 window.Vue = require('vue');
 
 /**
@@ -24,8 +23,6 @@ Vue.component('navbar-compo', require('./components/NavBar.vue').default);
 
 Vue.component('login-compo',require('./components/Login.vue').default);
 
-Vue.component('tab-compo', require('./components/Tab.vue').default);
-
 Vue.component('user-card', require('./components/UserCard.vue').default);
 
 Vue.component('add-admin', require('./components/AddAdmin.vue').default);
@@ -34,7 +31,7 @@ Vue.component('data-table', require('./components/DataTable.vue').default);
 
 Vue.component('modal-table', require('./components/ModalTable.vue').default);
 
-//Vue.component('login', require('./components/LoginForm.vue'));
+//Vue.component('login', require('./components/LoginForm.vue'));s
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
