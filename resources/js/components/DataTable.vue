@@ -14,8 +14,8 @@
 
           </tr>
           </mdb-tbl-head>
-          <mdb-tbl-body>
-            <tr v-for="student in students" :key="student" class="text-center">
+          <mdb-tbl-body id="myTable">
+            <tr v-for="student in students" :key="student.matricule" class="text-center">
               <td>{{ rang++ }}</td>
               <td>{{student.nom}} </td>
               <td><modal-table v-bind:std="student"/></td>
@@ -40,7 +40,7 @@
     data() 
     {
       return {
-        students:this.etudiants
+        students:this.etudiants,
       }; 
     }
   }

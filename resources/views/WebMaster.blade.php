@@ -7,7 +7,7 @@
     </head>
     <body style="overflow-x:hidden;">
         <div id="app">
-            <div><navbar-compo /></div>
+            <div><navbar-compo v-bind:url="'WebMaster'" /></div>
             <br><br><br><br>
     <div class="row">
         <div class="col-md-3 col-12 mt-3 ml-md-3">

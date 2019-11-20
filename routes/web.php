@@ -14,6 +14,11 @@
 Route::get('/', function () {
     return view('Login');
 });
+
+Route::get('/rech', function () {
+    return view('Recherche');
+});
+
 Route::get('/WebMaster', function () {
     return view('WebMaster');
 })->name('webmaster');

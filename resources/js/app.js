@@ -23,6 +23,8 @@ Vue.component('navbar-compo', require('./components/NavBar.vue').default);
 
 Vue.component('login-compo',require('./components/Login.vue').default);
 
+Vue.component('rech-compo', require('./components/Recherche.vue').default);
+
 Vue.component('user-card', require('./components/UserCard.vue').default);
 
 Vue.component('add-admin', require('./components/AddAdmin.vue').default);
@@ -30,6 +32,8 @@ Vue.component('add-admin', require('./components/AddAdmin.vue').default);
 Vue.component('data-table', require('./components/DataTable.vue').default);
 
 Vue.component('modal-table', require('./components/ModalTable.vue').default);
+
+Vue.component('list-compo', require('./components/List.vue').default);
 
 //Vue.component('login', require('./components/LoginForm.vue'));s
 

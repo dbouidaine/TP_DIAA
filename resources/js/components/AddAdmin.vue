@@ -32,7 +32,7 @@
   </mdb-row>
 </template>
 <script>
-import axios from "axios";
+  import axios from "axios";
   import { mdbRow, mdbCol, mdbInput, mdbTextarea, mdbBtn, mdbCard, mdbCardHeader, mdbCardTitle, mdbCardFooter, mdbCardBody } from 'mdbvue';
   export default {
     name: 'FormsPage',
@@ -53,8 +53,9 @@ import axios from "axios";
       return {
         form : 
         {
-        
-          url : this.url}
-      };}
-    }; 
+          url : this.url
+          }
+      };
+    }
+  }; 
 </script>
