@@ -45,4 +45,12 @@ Vue.component('list-compo', require('./components/List.vue').default);
 
 const app = new Vue({
     el: '#app',
+    data:{
+      resultData: ''
+        },
+    methods:{
+        'research_data' : function(data){
+            this.resultData=data.data; 
+        }
+    }
 });

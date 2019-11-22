@@ -18,12 +18,11 @@ Route::get('/', function () {
 Route::get('/rech', function () {
     return view('Recherche');
 });
-
 Route::get('/WebMaster', function () {
     return view('WebMaster');
 })->name('webmaster');
 
-Route::get('/Administratif','EtudiantController@getEtudiants');
+Route::get('/Administratif','EtudiantController@getEtudiants')->name('admin');
 
 Route::get('Admin', 'AdministratifController@getForm');
 Route::post('/Admin','AdministratifController@postForm');
@@ -31,4 +30,5 @@ Route::post('/Admin','AdministratifController@postForm');
 Route::get('etudiant', 'EtudiantController@getForm');
 Route::post('etudiant', ['uses' => 'EtudiantController@postForm', 'as' => 'storeEtudiant']);
 
-Route::resource('etudiantt', 'EtudiantController');
+Route::get('/etudiantt', 'EtudiantController@index')->name('etudiant.index');
+Route::resource('/etudiantt', 'EtudiantController');

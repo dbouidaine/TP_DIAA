@@ -15,10 +15,11 @@
         </div>
         <div class="col-md-8 col-12 mt-3 ml-md-4">
             <div>
-                <rech-compo v-bind:url_admin="'Administratif'" />
+                <rech-compo @research_data="research_data" v-bind:url_admin="'Administratif'" />
             </div>
+            <br>
             <div>
-                <list-compo />
+                <list-compo  v-bind:info="resultData"/>
             </div>
             <br><br>
         </div>

@@ -82,7 +82,7 @@ class EtudiantController extends Controller
         $etudiants = Etudiant::where('matricule', $request->input('matricule'))->get();
         $etudiant = $etudiants[0];
 
-        return view('show',  compact('etudiant'));
+        return response()->json(['data'=>$etudiant],200); 
     }
     public function getEtudiants() 
     {
@@ -91,5 +91,4 @@ class EtudiantController extends Controller
        
 
     }
-
 }

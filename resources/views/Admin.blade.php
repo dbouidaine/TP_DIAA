@@ -15,7 +15,8 @@
         <div class="card col-md-8 col-12 mt-3 ml-md-4 p-5">
             <div style="justify-content-center">
              <div id="tb">
-                <data-table v-bind:etudiants={!!json_encode( $etudiants) !!} />
+                 
+                <data-table url={{url ('/supp')}} v-bind:etudiants={!!json_encode( $etudiants) !!} />
             </div>
             </div>
         </div>

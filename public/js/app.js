@@ -2110,6 +2110,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var mdbvue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! mdbvue */ "./node_modules/mdbvue/lib/index.js");
 /* harmony import */ var mdbvue__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(mdbvue__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _ModalTable__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ModalTable */ "./resources/js/components/ModalTable.vue");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_2__);
 //
 //
 //
@@ -2137,6 +2139,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -2144,6 +2147,9 @@ __webpack_require__.r(__webpack_exports__);
   props: {
     etudiants: {
       type: Array
+    },
+    url: {
+      type: String
     }
   },
   components: {
@@ -2156,6 +2162,30 @@ __webpack_require__.r(__webpack_exports__);
     return {
       students: this.etudiants
     };
+  },
+  methods: {
+    /*supp(id) {
+     
+      var url =this._url+"/"+id; 
+       console.log(url); 
+          axios.get(url)
+               .then(function (response) {
+                   console.log(response); 
+               })
+               .catch(function (error) {
+                  
+               });
+    }*/
+    deleteStudent: function deleteStudent(id, index) {
+      if (confirm("Do you really want to delete it?")) {
+        var app = this;
+        axios__WEBPACK_IMPORTED_MODULE_2___default.a["delete"]('/etudiantt/' + id).then(function (response) {
+          app.students.splice(index, 1);
+        })["catch"](function (response) {
+          alert("Could not delete Student");
+        });
+      }
+    }
   }
 });
 
@@ -2202,6 +2232,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'ListGroupPage',
+  props: ['info'],
   components: {
     mdbRow: mdbvue__WEBPACK_IMPORTED_MODULE_0__["mdbRow"],
     mdbCol: mdbvue__WEBPACK_IMPORTED_MODULE_0__["mdbCol"],
@@ -2457,6 +2488,23 @@ __webpack_require__.r(__webpack_exports__);
     mdbCardHeader: mdbvue__WEBPACK_IMPORTED_MODULE_0__["mdbCardHeader"],
     mdbCardFooter: mdbvue__WEBPACK_IMPORTED_MODULE_0__["mdbCardFooter"],
     mdbCardTitle: mdbvue__WEBPACK_IMPORTED_MODULE_0__["mdbCardTitle"]
+  },
+  data: function data() {
+    return {
+      matricule: ''
+    };
+  },
+  methods: {
+    search: function search() {
+      var cmp = this;
+      axios.post('etudiant', {
+        matricule: this.matricule
+      }).then(function (response) {
+        cmp.$emit('research_data', response.data);
+      })["catch"](function (error) {
+        console.log(error);
+      });
+    }
   }
 });
 
@@ -21227,7 +21275,7 @@ var render = function() {
           _c(
             "mdb-tbl-body",
             { attrs: { id: "myTable" } },
-            _vm._l(_vm.students, function(student) {
+            _vm._l(_vm.students, function(student, index) {
               return _c(
                 "tr",
                 { key: student.matricule, staticClass: "text-center" },
@@ -21243,15 +21291,24 @@ var render = function() {
                     [
                       _c(
                         "mdb-btn",
-                        {
-                          staticClass: "btn m-0",
-                          attrs: {
-                            tag: "a",
-                            role: "button",
-                            color: "danger",
-                            href: ""
-                          }
-                        },
+                        _vm._b(
+                          {
+                            staticClass: "btn m-0",
+                            attrs: {
+                              tag: "a",
+                              role: "button",
+                              color: "danger"
+                            },
+                            on: {
+                              click: function($event) {
+                                return _vm.deleteStudent(student.id, index)
+                              }
+                            }
+                          },
+                          "mdb-btn",
+                          student,
+                          false
+                        ),
                         [_vm._v(" Supprimer")]
                       )
                     ],
@@ -21300,6 +21357,16 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "mdb-row",
+    {
+      directives: [
+        {
+          name: "show",
+          rawName: "v-show",
+          value: _vm.info.matricule != null,
+          expression: "info.matricule!=null"
+        }
+      ]
+    },
     [
       _c(
         "mdb-col",
@@ -21312,7 +21379,7 @@ var render = function() {
               _c(
                 "mdb-card-header",
                 { staticClass: "pt-4 gray" },
-                [_c("mdb-card-title", [_c("strong", [_vm._v("Résultat")])])],
+                [_c("mdb-card-title", [_c("strong", [_vm._v("Résultat  ")])])],
                 1
               ),
               _vm._v(" "),
@@ -21329,26 +21396,58 @@ var render = function() {
                             "mdb-list-group",
                             [
                               _c("mdb-list-group-item", [
-                                _vm._v("Matricule: ")
+                                _vm._v(
+                                  "Matricule: " +
+                                    _vm._s(_vm.info.matricule) +
+                                    " "
+                                )
                               ]),
-                              _vm._v(" "),
-                              _c("mdb-list-group-item", [_vm._v("Nom: ")]),
                               _vm._v(" "),
                               _c("mdb-list-group-item", [
-                                _vm._v("Date de Naissance: ")
+                                _vm._v("Nom:  " + _vm._s(_vm.info.nom) + "  ")
                               ]),
-                              _vm._v(" "),
-                              _c("mdb-list-group-item", [_vm._v("Adresse: ")]),
-                              _vm._v(" "),
-                              _c("mdb-list-group-item", [_vm._v("E-Mail: ")]),
-                              _vm._v(" "),
-                              _c("mdb-list-group-item", [_vm._v("Groupe: ")]),
                               _vm._v(" "),
                               _c("mdb-list-group-item", [
-                                _vm._v("Abscences: ")
+                                _vm._v(
+                                  "Date de Naissance:  " +
+                                    _vm._s(_vm.info.dateNaissance) +
+                                    "  "
+                                )
                               ]),
                               _vm._v(" "),
-                              _c("mdb-list-group-item", [_vm._v("Moyenne: ")])
+                              _c("mdb-list-group-item", [
+                                _vm._v(
+                                  "Adresse:  " + _vm._s(_vm.info.adresse) + "  "
+                                )
+                              ]),
+                              _vm._v(" "),
+                              _c("mdb-list-group-item", [
+                                _vm._v(
+                                  "E-Mail:  " + _vm._s(_vm.info.email) + "  "
+                                )
+                              ]),
+                              _vm._v(" "),
+                              _c("mdb-list-group-item", [
+                                _vm._v(
+                                  "Groupe:  " + _vm._s(_vm.info.groupe) + "  "
+                                )
+                              ]),
+                              _vm._v(" "),
+                              _c("mdb-list-group-item", [
+                                _vm._v(
+                                  "Abscences:  " +
+                                    _vm._s(_vm.info.nbAbsences) +
+                                    "  "
+                                )
+                              ]),
+                              _vm._v(" "),
+                              _c("mdb-list-group-item", [
+                                _vm._v(
+                                  "Moyenne:  " +
+                                    _vm._s(_vm.info.moyennes) +
+                                    "  "
+                                )
+                              ])
                             ],
                             1
                           )
@@ -21736,11 +21835,11 @@ var render = function() {
         [
           _c(
             "mdb-card",
-            { staticClass: "black-text grey lighten-4" },
+            { staticClass: "black-text lighten-4" },
             [
               _c(
                 "mdb-card-header",
-                { staticClass: "pt-4 white" },
+                { staticClass: "pt-4 gray" },
                 [
                   _c("mdb-card-title", [
                     _c("strong", [_vm._v("Rechercher un étudiant")])
@@ -21760,9 +21859,17 @@ var render = function() {
                         [
                           _c("mdb-input", {
                             attrs: {
+                              name: "matricule",
                               label: "Entrer le Matricule",
                               far: "",
-                              icon: "user"
+                              icon: "id-card"
+                            },
+                            model: {
+                              value: _vm.matricule,
+                              callback: function($$v) {
+                                _vm.matricule = $$v
+                              },
+                              expression: "matricule"
                             }
                           })
                         ],
@@ -21777,7 +21884,7 @@ var render = function() {
               _vm._v(" "),
               _c(
                 "mdb-card-footer",
-                { staticClass: "d-flex white justify-content-end" },
+                { staticClass: "d-flex gray justify-content-end" },
                 [
                   _c(
                     "mdb-btn",
@@ -21787,15 +21894,24 @@ var render = function() {
                         role: "button",
                         href: _vm.url_admin,
                         color: "primary",
-                        icon: "paper-plane"
+                        icon: "search-plus"
                       }
                     },
                     [_vm._v("Plus d'information")]
                   ),
                   _vm._v(" "),
-                  _c("mdb-btn", { attrs: { outline: "purple", icon: "" } }, [
-                    _vm._v("Rechercher")
-                  ])
+                  _c(
+                    "mdb-btn",
+                    {
+                      attrs: { outline: "green", icon: "search" },
+                      on: {
+                        click: function($event) {
+                          return _vm.search()
+                        }
+                      }
+                    },
+                    [_vm._v("Rechercher")]
+                  )
                 ],
                 1
               )
@@ -34082,7 +34198,15 @@ Vue.component('list-compo', __webpack_require__(/*! ./components/List.vue */ "./
  */
 
 var app = new Vue({
-  el: '#app'
+  el: '#app',
+  data: {
+    resultData: ''
+  },
+  methods: {
+    'research_data': function research_data(data) {
+      this.resultData = data.data;
+    }
+  }
 });
 
 /***/ }),
@@ -34192,14 +34316,15 @@ __webpack_require__.r(__webpack_exports__);
 /*!***********************************************!*\
   !*** ./resources/js/components/DataTable.vue ***!
   \***********************************************/
-/*! exports provided: default */
+/*! no static exports found */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _DataTable_vue_vue_type_template_id_4b997e69___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./DataTable.vue?vue&type=template&id=4b997e69& */ "./resources/js/components/DataTable.vue?vue&type=template&id=4b997e69&");
 /* harmony import */ var _DataTable_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./DataTable.vue?vue&type=script&lang=js& */ "./resources/js/components/DataTable.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _DataTable_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _DataTable_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
 
 
@@ -34229,7 +34354,7 @@ component.options.__file = "resources/js/components/DataTable.vue"
 /*!************************************************************************!*\
   !*** ./resources/js/components/DataTable.vue?vue&type=script&lang=js& ***!
   \************************************************************************/
-/*! exports provided: default */
+/*! no static exports found */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
