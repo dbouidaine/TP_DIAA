@@ -15,20 +15,18 @@ Route::get('/', function () {
     return view('Login');
 });
 
+Route::get('/WebMaster', function () {////////////////////////
+    return view('WebMaster');
+})->name('webmaster');
+//Route::get('/WebMaster', 'AdministratifController@getForm');/////////////////
+Route::post('/WebMaster', ['uses' => 'AdministratifController@postForm', 'as' => 'storeAdministratif']);//////////////////
+
 Route::get('/rech', function () {
     return view('Recherche');
 });
-Route::get('/WebMaster', function () {
-    return view('WebMaster');
-})->name('webmaster');
+Route::get('/etudiants','EtudiantController@getEtudiants')->name('admin');///////////////
+Route::get('rech', 'EtudiantController@getForm');
+Route::post('rech', ['uses' => 'EtudiantController@postForm', 'as' => 'storeEtudiant']);
 
-Route::get('/Administratif','EtudiantController@getEtudiants')->name('admin');
-
-Route::get('Admin', 'AdministratifController@getForm');
-Route::post('/Admin','AdministratifController@postForm');
-
-Route::get('etudiant', 'EtudiantController@getForm');
-Route::post('etudiant', ['uses' => 'EtudiantController@postForm', 'as' => 'storeEtudiant']);
-
-Route::get('/etudiantt', 'EtudiantController@index')->name('etudiant.index');
+//Route::get('/etudiantt', 'EtudiantController@index')->name('etudiant.index');
 Route::resource('/etudiantt', 'EtudiantController');

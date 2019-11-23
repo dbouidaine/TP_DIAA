@@ -73,7 +73,7 @@ class EtudiantController extends Controller
 
     public function getForm()
     {
-        return view('index');
+        return view('Recherche');
     }
 
     public function postForm(EtudiantRechercheRequest $request)
@@ -82,13 +82,12 @@ class EtudiantController extends Controller
         $etudiants = Etudiant::where('matricule', $request->input('matricule'))->get();
         $etudiant = $etudiants[0];
 
-        return response()->json(['data'=>$etudiant],200); 
+        return view('show',  compact('etudiant'));
+        //return response()->json(['data'=>$etudiant],200);
     }
-    public function getEtudiants() 
+    public function getEtudiants()
     {
-      $etudiants=Etudiant::all(); 
-      return view('admin',['etudiants'=>$etudiants]); 
-       
-
+      $etudiants=Etudiant::all();
+      return view('admin',['etudiants'=>$etudiants]);
     }
 }

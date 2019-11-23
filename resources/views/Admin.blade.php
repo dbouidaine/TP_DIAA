@@ -7,15 +7,15 @@
     <body style="overflow-x:hidden;">
         <div id="app">
             <div><navbar-compo v-bind:url="'rech'" /></div>
-            <br><br><br><br> 
+            <br><br><br><br>
     <div class="row">
         <div class="col-md-3 col-12 mt-3 ml-md-3">
             <user-card />
         </div>
-        <div class="card col-md-8 col-12 mt-3 ml-md-4 p-5">
-            <div style="justify-content-center">
+        <div class="card col-md-8 col-12 mt-3 ml-md-4 p-4">
+            <div style="block: justify-content-center">
              <div id="tb">
-                 
+
                 <data-table url={{url ('/supp')}} v-bind:etudiants={!!json_encode( $etudiants) !!} />
             </div>
             </div>

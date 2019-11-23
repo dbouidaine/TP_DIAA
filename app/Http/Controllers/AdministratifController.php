@@ -10,29 +10,29 @@ class AdministratifController extends Controller
 {
     public function getForm()
     {
-        //return view('administratif');
+        return view('WebMaster');
     }
 
     public function postForm(Request $request)
-    {   
+    {
         $request->validate([
-            'name' => 'required',
-            'birthday' => 'required',
-            'adress' => 'required',
+            'nom' => 'required|unique:administratifs',
+            'dateNaissance' => 'required',
+            'adresse' => 'required',
             'email' => 'required|email|unique:administratifs',
             'login' => 'required|unique:administratifs',
-            'password' => 'required',
-        ]); 
-       
+            'motPasse' => 'required',
+        ]);
+
         $administratif = new Administratif();
-        $administratif->nom = $request->input('name');
-        $administratif->dateNaissance = $request->input('birthday');
-        $administratif->adresse = $request->input('adress');
+        $administratif->nom = $request->input('nom');
+        $administratif->dateNaissance = $request->input('dateNaissance');
+        $administratif->adresse = $request->input('adresse');
         $administratif->email = $request->input('email');
         $administratif->login = $request->input('login');
-        $administratif->motPasse = $request->input('password');
+        $administratif->motPasse = $request->input('motPasse');
         $administratif->save();
-        
-        return redirect()->route('webmaster')->with('success','administratif ajouté avec successes!');
+
+        return redirect()->route('webmaster')->with('success','L\'administratif a bien été ajouté dans la BDD de l\'application !');
     }
 }

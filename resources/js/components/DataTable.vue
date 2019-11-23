@@ -5,7 +5,7 @@
     <br>
     <mdb-tbl responsive btn striped bordered>
       <mdb-tbl-head>
-        
+
          <tr>
             <th>#</th>
             <th>Nom</th>
@@ -19,8 +19,9 @@
               <td>{{ rang++ }}</td>
               <td>{{student.nom}} </td>
               <td><modal-table v-bind:std="student"/></td>
-              <td><mdb-btn tag="a" v-on:click="deleteStudent(student.id,index)" v-bind="student" role="button" color="danger"  class="btn m-0"> Supprimer</mdb-btn></td>
-              </tr>
+              <!--td><mdb-btn tag="a" v-on:click="deleteStudent(student.id,index)" v-bind="student" role="button" color="danger"  class="btn m-0"> Supprimer</mdb-btn></td-->
+                <td><mdb-btn tag="a" role="button" color="danger"  class="btn m-0"> Supprimer</mdb-btn></td>
+            </tr>
           </mdb-tbl-body>
         </mdb-tbl>
   </div>
@@ -37,23 +38,23 @@
       mdbTblHead,
       mdbTblBody,
       mdbBtn
-    }, 
-    data() 
+    },
+    data()
     {
       return {
         students:this.etudiants,
-      }; 
+      };
     }, methods : {
      /*supp(id) {
-      
-       var url =this._url+"/"+id; 
-        console.log(url); 
+
+       var url =this._url+"/"+id;
+        console.log(url);
            axios.get(url)
                 .then(function (response) {
-                    console.log(response); 
+                    console.log(response);
                 })
                 .catch(function (error) {
-                   
+
                 });
      }*/
             deleteStudent(id, index) {

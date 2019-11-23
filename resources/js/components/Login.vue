@@ -3,12 +3,12 @@
 		<mdb-view hover>
 			<a href="">
                 <div style="height:200px;">
-                    <mdb-card-image 
-					        src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20%282%29.jpg"
+                    <mdb-card-image
+                        src="http://localhost/TP_DIAA-master/resources/assets/nature.png"
 					      alt="Card image cap"/>
 				<mdb-mask flex-center waves overlay="white-slight"></mdb-mask>
         </div>
-				
+
 			</a>
 		</mdb-view>
 		<mdb-card-body>

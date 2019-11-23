@@ -2139,6 +2139,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 
 
@@ -2165,16 +2166,14 @@ __webpack_require__.r(__webpack_exports__);
   },
   methods: {
     /*supp(id) {
-     
-      var url =this._url+"/"+id; 
-       console.log(url); 
+       var url =this._url+"/"+id;
+       console.log(url);
           axios.get(url)
                .then(function (response) {
-                   console.log(response); 
+                   console.log(response);
                })
                .catch(function (error) {
-                  
-               });
+                });
     }*/
     deleteStudent: function deleteStudent(id, index) {
       if (confirm("Do you really want to delete it?")) {
@@ -2232,7 +2231,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'ListGroupPage',
-  props: ['info'],
+  props: ['matricule', 'nom', 'date', 'adresse', 'email', 'groupe', 'nb', 'moyennes'],
   components: {
     mdbRow: mdbvue__WEBPACK_IMPORTED_MODULE_0__["mdbRow"],
     mdbCol: mdbvue__WEBPACK_IMPORTED_MODULE_0__["mdbCol"],
@@ -21291,24 +21290,10 @@ var render = function() {
                     [
                       _c(
                         "mdb-btn",
-                        _vm._b(
-                          {
-                            staticClass: "btn m-0",
-                            attrs: {
-                              tag: "a",
-                              role: "button",
-                              color: "danger"
-                            },
-                            on: {
-                              click: function($event) {
-                                return _vm.deleteStudent(student.id, index)
-                              }
-                            }
-                          },
-                          "mdb-btn",
-                          student,
-                          false
-                        ),
+                        {
+                          staticClass: "btn m-0",
+                          attrs: { tag: "a", role: "button", color: "danger" }
+                        },
                         [_vm._v(" Supprimer")]
                       )
                     ],
@@ -21359,12 +21344,7 @@ var render = function() {
     "mdb-row",
     {
       directives: [
-        {
-          name: "show",
-          rawName: "v-show",
-          value: _vm.info.matricule != null,
-          expression: "info.matricule!=null"
-        }
+        { name: "show", rawName: "v-show", value: 1 != 0, expression: "1!=0" }
       ]
     },
     [
@@ -21379,7 +21359,11 @@ var render = function() {
               _c(
                 "mdb-card-header",
                 { staticClass: "pt-4 gray" },
-                [_c("mdb-card-title", [_c("strong", [_vm._v("Résultat  ")])])],
+                [
+                  _c("mdb-card-title", [
+                    _c("strong", [_vm._v("Fiche d'étudiant")])
+                  ])
+                ],
                 1
               ),
               _vm._v(" "),
@@ -21396,57 +21380,43 @@ var render = function() {
                             "mdb-list-group",
                             [
                               _c("mdb-list-group-item", [
-                                _vm._v(
-                                  "Matricule: " +
-                                    _vm._s(_vm.info.matricule) +
-                                    " "
-                                )
+                                _c("strong", [_vm._v("Matricule:")]),
+                                _vm._v(" " + _vm._s(_vm.matricule) + " ")
                               ]),
                               _vm._v(" "),
                               _c("mdb-list-group-item", [
-                                _vm._v("Nom:  " + _vm._s(_vm.info.nom) + "  ")
+                                _c("strong", [_vm._v("Nom:")]),
+                                _vm._v("  " + _vm._s(_vm.nom) + "  ")
                               ]),
                               _vm._v(" "),
                               _c("mdb-list-group-item", [
-                                _vm._v(
-                                  "Date de Naissance:  " +
-                                    _vm._s(_vm.info.dateNaissance) +
-                                    "  "
-                                )
+                                _c("strong", [_vm._v("Date de Naissance:")]),
+                                _vm._v("  " + _vm._s(_vm.date) + "  ")
                               ]),
                               _vm._v(" "),
                               _c("mdb-list-group-item", [
-                                _vm._v(
-                                  "Adresse:  " + _vm._s(_vm.info.adresse) + "  "
-                                )
+                                _c("strong", [_vm._v("Adresse:")]),
+                                _vm._v("  " + _vm._s(_vm.adresse) + "  ")
                               ]),
                               _vm._v(" "),
                               _c("mdb-list-group-item", [
-                                _vm._v(
-                                  "E-Mail:  " + _vm._s(_vm.info.email) + "  "
-                                )
+                                _c("strong", [_vm._v("E-Mail:")]),
+                                _vm._v("  " + _vm._s(_vm.email) + "  ")
                               ]),
                               _vm._v(" "),
                               _c("mdb-list-group-item", [
-                                _vm._v(
-                                  "Groupe:  " + _vm._s(_vm.info.groupe) + "  "
-                                )
+                                _c("strong", [_vm._v("Groupe:")]),
+                                _vm._v("  " + _vm._s(_vm.groupe) + "  ")
                               ]),
                               _vm._v(" "),
                               _c("mdb-list-group-item", [
-                                _vm._v(
-                                  "Abscences:  " +
-                                    _vm._s(_vm.info.nbAbsences) +
-                                    "  "
-                                )
+                                _c("strong", [_vm._v("Nombre d'absences:")]),
+                                _vm._v("  " + _vm._s(_vm.nb) + "  ")
                               ]),
                               _vm._v(" "),
                               _c("mdb-list-group-item", [
-                                _vm._v(
-                                  "Moyenne:  " +
-                                    _vm._s(_vm.info.moyennes) +
-                                    "  "
-                                )
+                                _c("strong", [_vm._v("Moyennes:")]),
+                                _vm._v("  " + _vm._s(_vm.moyennes) + "  ")
                               ])
                             ],
                             1
@@ -21504,7 +21474,7 @@ var render = function() {
               _c("mdb-card-image", {
                 attrs: {
                   src:
-                    "https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20%282%29.jpg",
+                    "http://localhost/TP_DIAA-master/resources/assets/nature.png",
                   alt: "Card image cap"
                 }
               }),
@@ -21745,8 +21715,8 @@ var render = function() {
       _c("mdb-navbar-brand", { attrs: { href: "#" } }, [
         _c("img", {
           attrs: {
-            src: __webpack_require__(/*! ../../assets/FULL.png */ "./resources/assets/FULL.png"),
-            height: "50",
+            src: "http://localhost/TP_DIAA-master/resources/assets/FULL.png",
+            height: "40",
             alt: "Logo"
           }
         })
@@ -21785,9 +21755,15 @@ var render = function() {
                         _vm._v("Setting")
                       ]),
                       _vm._v(" "),
-                      _c("mdb-dropdown-item", { attrs: { href: "/" } }, [
-                        _vm._v("Log Out")
-                      ])
+                      _c(
+                        "mdb-dropdown-item",
+                        {
+                          attrs: {
+                            href: "http://localhost/TP_DIAA-master/public"
+                          }
+                        },
+                        [_vm._v("Log Out")]
+                      )
                     ],
                     1
                   )
@@ -34135,17 +34111,6 @@ module.exports = function(module) {
 
 /***/ }),
 
-/***/ "./resources/assets/FULL.png":
-/*!***********************************!*\
-  !*** ./resources/assets/FULL.png ***!
-  \***********************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "/images/FULL.png?96f8b95879f8fc436ade6132c6066c59";
-
-/***/ }),
-
 /***/ "./resources/js/app.js":
 /*!*****************************!*\
   !*** ./resources/js/app.js ***!
@@ -34316,15 +34281,14 @@ __webpack_require__.r(__webpack_exports__);
 /*!***********************************************!*\
   !*** ./resources/js/components/DataTable.vue ***!
   \***********************************************/
-/*! no static exports found */
+/*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _DataTable_vue_vue_type_template_id_4b997e69___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./DataTable.vue?vue&type=template&id=4b997e69& */ "./resources/js/components/DataTable.vue?vue&type=template&id=4b997e69&");
 /* harmony import */ var _DataTable_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./DataTable.vue?vue&type=script&lang=js& */ "./resources/js/components/DataTable.vue?vue&type=script&lang=js&");
-/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _DataTable_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _DataTable_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__[key]; }) }(__WEBPACK_IMPORT_KEY__));
-/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
 
 
@@ -34354,7 +34318,7 @@ component.options.__file = "resources/js/components/DataTable.vue"
 /*!************************************************************************!*\
   !*** ./resources/js/components/DataTable.vue?vue&type=script&lang=js& ***!
   \************************************************************************/
-/*! no static exports found */
+/*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -34814,8 +34778,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\xampp\htdocs\TP\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\xampp\htdocs\TP\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\xampp\htdocs\TP_DIAA-master\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\xampp\htdocs\TP_DIAA-master\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
