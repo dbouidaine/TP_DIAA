@@ -7,14 +7,18 @@
     <title>Service Scolarité</title>
 </head>
 <body>
-    <div class="col-sm-offset-4 col-sm-4" id="app">
-        <br>
-        <div>
-                <list-compo  matricule="{!! $etudiant->matricule !!}" nom="{!! $etudiant->nom !!}" adresse="{!! $etudiant->adresse !!}" email="{!! $etudiant->email !!}" nb="{!! $etudiant->nbAbsences !!}" date="{!! $etudiant->dateNaissance !!}" groupe="{!! $etudiant->groupe !!}" moyennes="{!! $etudiant->moyennes !!}"></list-compo>
+    <div class="row justify-content-center"  id="app">
+        <div class="col-12 col-md-4">
+            <br>
+            <a href="javascript:history.back()" class="btn btn-info">
+                    <span class="glyphicon glyphicon-circle-arrow-left"></span> Retour
+            </a>
+            <br>
+            <br>
+            <div>
+                    <list-compo  matricule="{!! $etudiant->matricule !!}" nom="{!! $etudiant->nom !!}" adresse="{!! $etudiant->adresse !!}" email="{!! $etudiant->email !!}" nb="{!! $etudiant->nbAbsences !!}" date="{!! $etudiant->dateNaissance !!}" groupe="{!! $etudiant->groupe !!}" moyennes="{!! $etudiant->moyennes !!}"></list-compo>
+            </div>
         </div>
-        <a href="javascript:history.back()" class="btn btn-primary">
-            <span class="glyphicon glyphicon-circle-arrow-left"></span> Retour
-        </a>
     </div>
 
     <script type="text/javascript" src="js/app.js"></script>

@@ -24,18 +24,26 @@
                 </div>
             @endif
             <div>
-                <!--rech-compo @research_data="research_data" v-bind:url_admin="'etudiants'" /-->
-                <div class="panel-body">
-                    {!! Form::open(['route' => 'storeEtudiant']) !!}
-                    <div class="form-group {!! $errors->has('matricule') ? 'has-error' : '' !!}">
-                        {!! Form::text('matricule', null, ['class' => 'form-control', 'placeholder' => 'Matricule étudiant']) !!}
+                <div class="col-12">
+                    <div class="card elegant-text grey lighten-4">
+                        <h2 class="card-header p-4">Rechercher un étudiant</h2>
+                        <div class="card-body white">
+                                <div class="panel-body">
+                                        {!! Form::open(['route' => 'storeEtudiant']) !!}
+                                        <div class="md-form {!! $errors->has('matricule') ? 'has-error' : '' !!}">
+                                            {!! Form::text('matricule', null, ['class' => 'form-control', 'placeholder' => 'Matricule étudiant']) !!}
+                                        </div>
+                                        {!! Form::submit('Chercher', ['class' => 'btn btn-info float-right', 'dusk' => 'chercher']) !!}
+                                        {!! Form::close() !!}
+                                </div>
+                                <a href="http://localhost/TP_DIAA-master/public/etudiants" class="btn btn-info">
+                                    <span class="glyphicon"></span> Plus d'options
+                                </a>
+                        </div>
                     </div>
-                    {!! Form::submit('Chercher', ['class' => 'btn btn-primary pull-right', 'dusk' => 'chercher']) !!}
-                    {!! Form::close() !!}
                 </div>
-                <a href="http://localhost/TP_DIAA-master/public/etudiants" class="btn btn-primary">
-                    <span class="glyphicon"></span> Plus d'options
-                </a>
+                <!--rech-compo @research_data="research_data" v-bind:url_admin="'etudiants'" /-->
+
             </div>
             <br>
             <!--div>
