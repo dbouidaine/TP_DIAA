@@ -4,7 +4,7 @@
 			<a href="">
                 <div style="height:200px;">
                     <mdb-card-image
-                        src="http://localhost/TP_DIAA-master/resources/assets/nature.png"
+                        src="https://mdbootstrap.com/img/Photos/Others/images/43.jpg"
 					      alt="Card image cap"/>
 				<mdb-mask flex-center waves overlay="white-slight"></mdb-mask>
         </div>

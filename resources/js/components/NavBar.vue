@@ -1,7 +1,7 @@
 <template>
   <mdb-navbar expand="large" dark color="elegant" position="top">
     <mdb-navbar-brand href="#">
-      <img src="http://localhost/TP_DIAA-master/resources/assets/FULL.png" height="40" alt="Logo">
+      <img src="./../../assets/FULL.png" height="50" alt="Logo">
     </mdb-navbar-brand>
     <mdb-navbar-toggler>
       <mdb-navbar-nav right>
@@ -10,7 +10,7 @@
           <mdb-dropdown-toggle tag="a" icon="user-circle" navLink slot="toggle" waves-fixed></mdb-dropdown-toggle>
           <mdb-dropdown-menu>
             <mdb-dropdown-item disabled>Setting</mdb-dropdown-item>
-            <mdb-dropdown-item  href="http://localhost/TP_DIAA-master/public">Log Out</mdb-dropdown-item>
+            <mdb-dropdown-item  href="http://localhost/TP_IGL/public">Log Out</mdb-dropdown-item>
           </mdb-dropdown-menu>
         </mdb-dropdown>
       </mdb-navbar-nav>
