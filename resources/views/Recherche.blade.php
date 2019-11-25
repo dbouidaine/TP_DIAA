@@ -36,7 +36,7 @@
                                         {!! Form::submit('Chercher', ['class' => 'btn btn-info float-right', 'dusk' => 'chercher']) !!}
                                         {!! Form::close() !!}
                                 </div>
-                                <a href="http://localhost/TP_DIAA-master/public/etudiants" class="btn btn-info">
+                                <a href="http://localhost/TP_DIAA/public/etudiants" class="btn btn-info">
                                     <span class="glyphicon"></span> Plus d'options
                                 </a>
                         </div>

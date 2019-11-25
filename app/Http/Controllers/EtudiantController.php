@@ -67,8 +67,8 @@ class EtudiantController extends Controller
     public function destroy($id)
     {
         $this->etudiantRepository->destroy($id);
-
-        return back();
+        return redirect('etudiants');
+        //return back();
     }
 
     public function getForm()

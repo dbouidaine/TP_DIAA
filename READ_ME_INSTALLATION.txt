@@ -6,10 +6,12 @@
 
 4-composer update
 
-5-Change the .env.example. to .env
+5-Change the name of ".env.example." to ".env"
 
-6-Execute php key:generate
+6-Execute: php artisan key:generate
 
-7-Change Data Base of .env
+7-Change name of Data Base in .env to mysql (au lieu de laravel)
 
-8-Execute php artisan migrate
+8-Execute: php artisan migrate
+
+9-php artisan dusk:install

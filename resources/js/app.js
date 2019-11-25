@@ -7,8 +7,8 @@
 require('./bootstrap');
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'mdbvue/lib/css/mdb.min.css';
-import 'mdbootstrap/css/mdb.min.css';
-import '@fortawesome/fontawesome-free/css/all.css'; 
+//import 'mdbootstrap/css/mdb.min.css';
+import '@fortawesome/fontawesome-free/css/all.css';
 window.Vue = require('vue');
 
 /**
@@ -51,7 +51,7 @@ const app = new Vue({
         },
     methods:{
         'research_data' : function(data){
-            this.resultData=data.data; 
+            this.resultData=data.data;
         }
     }
 });

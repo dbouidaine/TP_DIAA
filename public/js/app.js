@@ -2109,9 +2109,8 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var mdbvue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! mdbvue */ "./node_modules/mdbvue/lib/index.js");
 /* harmony import */ var mdbvue__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(mdbvue__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _ModalTable__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ModalTable */ "./resources/js/components/ModalTable.vue");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
 //
 //
 //
@@ -2139,8 +2138,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -2165,25 +2162,8 @@ __webpack_require__.r(__webpack_exports__);
     };
   },
   methods: {
-    /*supp(id) {
-       var url =this._url+"/"+id;
-       console.log(url);
-          axios.get(url)
-               .then(function (response) {
-                   console.log(response);
-               })
-               .catch(function (error) {
-                });
-    }*/
-    deleteStudent: function deleteStudent(id, index) {
-      if (confirm("Do you really want to delete it?")) {
-        var app = this;
-        axios__WEBPACK_IMPORTED_MODULE_2___default.a["delete"]('/etudiantt/' + id).then(function (response) {
-          app.students.splice(index, 1);
-        })["catch"](function (response) {
-          alert("Could not delete Student");
-        });
-      }
+    supp: function supp(id) {
+      window.location.href = "http://localhost/TP_DIAA/public/etudiantt/" + id.toString();
     }
   }
 });
@@ -21281,7 +21261,7 @@ var render = function() {
                 [
                   _c("td", [_vm._v(_vm._s(_vm.rang++))]),
                   _vm._v(" "),
-                  _c("td", [_vm._v(_vm._s(student.nom) + " ")]),
+                  _c("td", [_vm._v(_vm._s(student.nom))]),
                   _vm._v(" "),
                   _c("td", [_c("modal-table", { attrs: { std: student } })], 1),
                   _vm._v(" "),
@@ -21290,10 +21270,24 @@ var render = function() {
                     [
                       _c(
                         "mdb-btn",
-                        {
-                          staticClass: "btn m-0",
-                          attrs: { tag: "a", role: "button", color: "danger" }
-                        },
+                        _vm._b(
+                          {
+                            staticClass: "btn m-0",
+                            attrs: {
+                              tag: "a",
+                              role: "button",
+                              color: "danger"
+                            },
+                            on: {
+                              click: function($event) {
+                                return _vm.supp(student.id)
+                              }
+                            }
+                          },
+                          "mdb-btn",
+                          student,
+                          false
+                        ),
                         [_vm._v(" Supprimer")]
                       )
                     ],
@@ -21474,7 +21468,7 @@ var render = function() {
               _c("mdb-card-image", {
                 attrs: {
                   src:
-                    "http://localhost/TP_DIAA-master/resources/assets/nature.png",
+                    "https://mdbootstrap.com/img/Photos/Others/images/43.jpg",
                   alt: "Card image cap"
                 }
               }),
@@ -21715,8 +21709,8 @@ var render = function() {
       _c("mdb-navbar-brand", { attrs: { href: "#" } }, [
         _c("img", {
           attrs: {
-            src: "http://localhost/TP_DIAA-master/resources/assets/FULL.png",
-            height: "40",
+            src: __webpack_require__(/*! ./../../assets/FULL.png */ "./resources/assets/FULL.png"),
+            height: "50",
             alt: "Logo"
           }
         })
@@ -21757,11 +21751,7 @@ var render = function() {
                       _vm._v(" "),
                       _c(
                         "mdb-dropdown-item",
-                        {
-                          attrs: {
-                            href: "http://localhost/TP_DIAA-master/public"
-                          }
-                        },
+                        { attrs: { href: "http://localhost/TP_DIAA/public" } },
                         [_vm._v("Log Out")]
                       )
                     ],
@@ -34111,6 +34101,17 @@ module.exports = function(module) {
 
 /***/ }),
 
+/***/ "./resources/assets/FULL.png":
+/*!***********************************!*\
+  !*** ./resources/assets/FULL.png ***!
+  \***********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/FULL.png?96f8b95879f8fc436ade6132c6066c59";
+
+/***/ }),
+
 /***/ "./resources/js/app.js":
 /*!*****************************!*\
   !*** ./resources/js/app.js ***!
@@ -34134,6 +34135,7 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 
+ //import 'mdbootstrap/css/mdb.min.css';
 
 
 window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
@@ -34778,8 +34780,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\xampp\htdocs\TP_DIAA-master\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\xampp\htdocs\TP_DIAA-master\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\xampp\htdocs\TP_DIAA\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\xampp\htdocs\TP_DIAA\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

@@ -15,18 +15,19 @@ Route::get('/', function () {
     return view('Login');
 });
 
-Route::get('/WebMaster', function () {////////////////////////
+Route::get('/WebMaster', function () {
     return view('WebMaster');
 })->name('webmaster');
-//Route::get('/WebMaster', 'AdministratifController@getForm');/////////////////
-Route::post('/WebMaster', ['uses' => 'AdministratifController@postForm', 'as' => 'storeAdministratif']);//////////////////
+//Route::get('/WebMaster', 'AdministratifController@getForm');
+Route::post('/WebMaster', ['uses' => 'AdministratifController@postForm', 'as' => 'storeAdministratif']);
 
-Route::get('/rech', function () {
+/*Route::get('/rech', function () {
     return view('Recherche');
-});
+});*/
 Route::get('/etudiants','EtudiantController@getEtudiants')->name('admin');///////////////
 Route::get('rech', 'EtudiantController@getForm');
 Route::post('rech', ['uses' => 'EtudiantController@postForm', 'as' => 'storeEtudiant']);
 
 //Route::get('/etudiantt', 'EtudiantController@index')->name('etudiant.index');
-Route::resource('/etudiantt', 'EtudiantController');
+//Route::get('/etudiantt', 'EtudiantController@destroy');
+Route::get('/etudiantt/{id}', ['uses' =>'EtudiantController@destroy']);
