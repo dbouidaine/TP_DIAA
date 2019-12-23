@@ -6,8 +6,8 @@
     </head>
     <body style="overflow-x:hidden;">
         <div id="app">
-            <div><navbar-compo /></div>
-            <br><br><br><br>  
+            <div><navbar-compo></navbar-compo></div>
+            <br><br><br><br>
             @yield('content')
         </div>
     </body>

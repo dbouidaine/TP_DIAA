@@ -7,11 +7,11 @@
     </head>
     <body style="overflow-x:hidden;">
         <div id="app">
-            <div><navbar-compo v-bind:url="'rech'" /></div>
+            <div><navbar-compo v-bind:url="'rech'"></navbar-compo></div>
             <br><br><br><br>
     <div class="row">
         <div class="col-md-3 col-12 mt-3 ml-md-5">
-            <user-card />
+            <user-card></user-card>
         </div>
         <div class="col-md-8 col-12 mt-3 ml-md-4">
             @if ($errors->any())
@@ -36,7 +36,7 @@
                                         {!! Form::submit('Chercher', ['class' => 'btn btn-info float-right', 'dusk' => 'chercher']) !!}
                                         {!! Form::close() !!}
                                 </div>
-                                <a href="http://localhost/TP_DIAA/public/etudiants" class="btn btn-info">
+                                <a href="http://localhost/TP_IGL_ABL/public/etudiants" class="btn btn-info">
                                     <span class="glyphicon"></span> Plus d'options
                                 </a>
                         </div>

@@ -16,7 +16,7 @@
             <br>
             <br>
             <div>
-                    <list-compo  matricule="{!! $etudiant->matricule !!}" nom="{!! $etudiant->nom !!}" adresse="{!! $etudiant->adresse !!}" email="{!! $etudiant->email !!}" nb="{!! $etudiant->nbAbsences !!}" date="{!! $etudiant->dateNaissance !!}" groupe="{!! $etudiant->groupe !!}" moyennes="{!! $etudiant->moyennes !!}"></list-compo>
+                    <list-compo matricule="{!! $etudiant->matricule !!}" nom="{!! $etudiant->nom !!}" adresse="{!! $etudiant->adresse !!}" email="{!! $etudiant->email !!}" nb="{!! $etudiant->nbAbsences !!}" date="{!! $etudiant->dateNaissance !!}" groupe="{!! $etudiant->groupe !!}" moyennes="{!! $etudiant->moyennes !!}"></list-compo>
             </div>
         </div>
     </div>

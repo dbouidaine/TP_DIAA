@@ -12,4 +12,4 @@
 
 7-Execute: php artisan migrate
 
-8-php artisan dusk:install
+8-Execute: php artisan dusk:install

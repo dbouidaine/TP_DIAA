@@ -8,11 +8,11 @@
 </head>
 <body style="overflow-x:hidden;">
 <div id="app">
-    <div><navbar-compo /></div>
+    <div><navbar-compo></navbar-compo></div>
     <br><br><br><br>
     <div class="row">
         <div class="col-md-3 col-12 mt-3 ml-md-3">
-            <user-card />
+            <user-card></user-card>
         </div>
         <div class="col-md-8 col-12 mt-3 ml-md-4">
             @if ($errors->any())

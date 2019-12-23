@@ -18,7 +18,7 @@
                 <tr v-for="(student, index) in students" :key="student.matricule" class="text-center">
                     <td>{{ rang++ }}</td>
                     <td>{{student.nom}}</td>
-                    <td><modal-table v-bind:std="student"/></td>
+                    <td><modal-table v-bind:std="student"></modal-table></td>
                     <td><mdb-btn tag="a" v-on:click="supp(student.id)" v-bind="student" role="button" color="danger" class="btn m-0"> Supprimer</mdb-btn></td>
                 </tr>
             </mdb-tbl-body>
@@ -46,7 +46,7 @@
 
             supp(id)
             {
-                window.location.href = "http://localhost/TP_DIAA/public/etudiantt/" + id.toString();
+                window.location.href = "http://localhost/TP_IGL_ABL/public/etudiantt/" + id.toString();
             }
 
         }

@@ -10,7 +10,7 @@
           <mdb-dropdown-toggle tag="a" icon="user-circle" navLink slot="toggle" waves-fixed></mdb-dropdown-toggle>
           <mdb-dropdown-menu>
             <mdb-dropdown-item disabled>Setting</mdb-dropdown-item>
-            <mdb-dropdown-item  href="http://localhost/TP_DIAA/public">Log Out</mdb-dropdown-item>
+            <mdb-dropdown-item  href="http://localhost/TP_IGL_ABL/public/">Log Out</mdb-dropdown-item>
           </mdb-dropdown-menu>
         </mdb-dropdown>
       </mdb-navbar-nav>
