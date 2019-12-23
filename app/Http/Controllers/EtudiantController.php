@@ -16,31 +16,9 @@ class EtudiantController extends Controller
 
     protected $etudiantRepository;
 
-    protected $nbrPerPage = 5;
-
     public function __construct(EtudiantRepository $etudiantRepository)
     {
         $this->etudiantRepository = $etudiantRepository;
-    }
-
-    public function index()
-    {
-        $etudiants = $this->etudiantRepository->getPaginate($this->nbrPerPage);
-        $links = $etudiants->render();
-
-        return view('index1', compact('etudiants', 'links'));
-    }
-
-    public function create()
-    {
-        return view('create');
-    }
-
-    public function store(EtudiantCreateRequest $request)
-    {
-        $etudiant = $this->etudiantRepository->store($request->all());
-
-        return redirect('etudiant')->withOk("L'utilisateur " . $etudiant->name . " a été créé.");
     }
 
     public function show($id)
@@ -50,25 +28,10 @@ class EtudiantController extends Controller
         return view('show',  compact('etudiant'));
     }
 
-    public function edit($id)
-    {
-        $etudiant = $this->etudiantRepository->getById($id);
-
-        return view('edit',  compact('etudiant'));
-    }
-
-    public function update(EtudiantUpdateRequest $request, $id)
-    {
-        $this->etudiantRepository->update($id, $request->all());
-
-        return redirect('etudiant')->withOk("L'utilisateur " . $request->input('name') . " a été modifié.");
-    }
-
     public function destroy($id)
     {
         $this->etudiantRepository->destroy($id);
         return redirect('etudiants');
-        //return back();
     }
 
     public function getForm()
@@ -83,7 +46,6 @@ class EtudiantController extends Controller
         $etudiant = $etudiants[0];
 
         return view('show',  compact('etudiant'));
-        //return response()->json(['data'=>$etudiant],200);
     }
     public function getEtudiants()
     {
