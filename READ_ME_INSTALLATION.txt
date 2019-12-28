@@ -1,13 +1,15 @@
 1-Clone from gitHub
 
-2-npm install --only=prod
+2-npm install
 
-3-composer update
+3-npm install mdbvue
 
-4-Execute: php artisan key:generate
+4-composer update
 
-5-Change name of Data Base in .env to mysql (au lieu de laravel)
+5-Execute: php artisan key:generate
 
-6-Execute: php artisan migrate
+6-Change name of Data Base in .env to mysql (au lieu de laravel)
 
-7-Execute: php artisan dusk:install
+7-Execute: php artisan migrate
+
+8-Execute: php artisan dusk:install
