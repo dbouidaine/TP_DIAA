@@ -8,16 +8,16 @@ use Illuminate\Support\Facades\Route;
 class RouteServiceProvider extends ServiceProvider
 {
     /**
-     * This namespace is applied to your controller routes.
+     * Cet espace de noms est appliqué aux routes de votre contrôleur.
      *
-     * In addition, it is set as the URL generator's root namespace.
+     * En outre, il est défini comme espace de noms racine du générateur d'URL.
      *
      * @var string
      */
     protected $namespace = 'App\Http\Controllers';
 
     /**
-     * Define your route model bindings, pattern filters, etc.
+     * Définir les liaisons de votre modèle d'itinéraire, les filtres de modèle, etc.
      *
      * @return void
      */
@@ -29,7 +29,7 @@ class RouteServiceProvider extends ServiceProvider
     }
 
     /**
-     * Define the routes for the application.
+     * Définissez les itinéraires pour l'application.
      *
      * @return void
      */
@@ -43,9 +43,9 @@ class RouteServiceProvider extends ServiceProvider
     }
 
     /**
-     * Define the "web" routes for the application.
+     * Définir les itinéraires "web" pour l'application.
      *
-     * These routes all receive session state, CSRF protection, etc.
+     * Ces routes reçoivent toutes l’état de la session, la protection CSRF, etc.
      *
      * @return void
      */
@@ -57,9 +57,9 @@ class RouteServiceProvider extends ServiceProvider
     }
 
     /**
-     * Define the "api" routes for the application.
+     * Définir les routes "api" pour l'application.
      *
-     * These routes are typically stateless.
+     * Ces routes sont généralement sans état.
      *
      * @return void
      */

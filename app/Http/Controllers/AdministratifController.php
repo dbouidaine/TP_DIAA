@@ -5,14 +5,26 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 Use App\Administratif;
 use App\Http\Requests\AdministratifRequest;
+/*!
+
+ * Affecter des controles sur la fonctionalité qui sert à ajouter un administarttif.
+ * Chaque entré est controllé suivant des criteres.
+
+*/
 
 class AdministratifController extends Controller
 {
+    /**
+     * Afficher le formulaire d'ajout un administratif
+     */
     public function getForm()
     {
         return view('WebMaster');
     }
 
+    /**
+     * Création d'un nouveau objet administratif après le clic sur le bouton Ajouter, et l'insérer dans la BDD
+     */
     public function postForm(Request $request)
     {
         $request->validate([

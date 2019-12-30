@@ -4,11 +4,13 @@ namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use Laravel\Dusk\DuskServiceProvider;
-
+/*!
+* Les fournisseurs de services sont le lieu central du démarrage de toutes les applications Laravel. Votre propre application, ainsi que tous les services de base de Laravel, sont initialisés via des fournisseurs de services.
+*/
 class AppServiceProvider extends ServiceProvider
 {
     /**
-     * Register any application services.
+     * Enregistrement de tous les services d'application.
      *
      * @return void
      */
@@ -20,7 +22,7 @@ class AppServiceProvider extends ServiceProvider
     }
 
     /**
-     * Bootstrap any application services.
+     * bootstrap tous les services d'application.
      *
      * @return void
      */

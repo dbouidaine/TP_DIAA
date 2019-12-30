@@ -6,12 +6,20 @@ use App\Http\Requests\Request;
 
 class EtudiantCreateRequest extends Request
 {
-
+    /**
+     * Déterminer si l'utilisateur est autorisé à faire cette demande.
+     *
+     * @return bool
+     */
     public function authorize()
     {
         return true;
     }
-
+    /**
+     * Obtener les règles de validation qui s'appliquent à la demande.
+     *
+     * @return array
+     */
     public function rules()
     {
         return [

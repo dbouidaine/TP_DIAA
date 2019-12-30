@@ -4,11 +4,19 @@ namespace App\Exceptions;
 
 use Exception;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
+/*!
 
+ *cette classe est essentiellement une file de messages. Vous lui
+ * envoyez un message et il finira par le traiter en appelant sa méthode
+ * d'exécution et en lui transmettant le message. Étant donné que ces
+ * appels seront toujours exécutés dans l'ordre des messages reçus
+ * sur le même thread, vous pouvez sérialiser les événements.
+
+*/
 class Handler extends ExceptionHandler
 {
     /**
-     * A list of the exception types that are not reported.
+     * Une liste des types d'exceptions qui ne doivent pas être signalés.
      *
      * @var array
      */
@@ -17,7 +25,7 @@ class Handler extends ExceptionHandler
     ];
 
     /**
-     * A list of the inputs that are never flashed for validation exceptions.
+     * Une liste des entrées qui ne sont jamais flashées pour les exceptions de validation.
      *
      * @var array
      */
@@ -27,9 +35,11 @@ class Handler extends ExceptionHandler
     ];
 
     /**
-     * Report or log an exception.
+     * Signaler ou consigner une exception.
      *
-     * @param  \Exception  $exception
+     * C’est un endroit idéal pour envoyer des exceptions à Sentry, Bugsnag, etc.
+     *
+     * @param  \Exception  $e
      * @return void
      */
     public function report(Exception $exception)
@@ -38,10 +48,10 @@ class Handler extends ExceptionHandler
     }
 
     /**
-     * Render an exception into an HTTP response.
+     * Rendre une exception dans une réponse HTTP.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \Exception  $exception
+     * @param  \Exception  $e
      * @return \Illuminate\Http\Response
      */
     public function render($request, Exception $exception)
