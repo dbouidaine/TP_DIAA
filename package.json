@@ -24,7 +24,7 @@
     "dependencies": {
         "bootstrap": "^4.3.1",
         "fontawesome": "^5.6.3",
-        "jquery": "^3.4.1",
+        "jquery": "^3.5.0",
         "mdb": "^0.1.0",
         "mdbvue": "^6.2.0"
     }
